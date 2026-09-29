@@ -257,91 +257,31 @@
 
 
     /* ---------- DESTINATIONS ---------- */
-    .destination-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 16px;
-    }
-    .destination-card {
-      min-height: 330px;
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      color: #fff;
-      isolation: isolate;
-      box-shadow: 0 12px 30px rgba(16,32,25,.09);
-    }
-    .destination-card img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -3;
-      transition: transform .6s ease;
-    }
-    .destination-card:hover img { transform: scale(1.06); }
-    .destination-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background: linear-gradient(0deg, rgba(3,25,15,.93), rgba(3,25,15,.08) 72%);
-    }
-    .destination-content {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 23px;
-      z-index: 2;
-    }
-    .destination-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(8px);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    .live-status i { color: #62d983; font-size: 7px; }
-    .destination-content h3 {
-      font-size: 30px;
-      line-height: 1;
-      margin: 13px 0 8px;
-    }
-    .destination-content p {
-      color: rgba(255,255,255,.78);
-      font-size: 12px;
-      max-width: 330px;
-      margin-bottom: 15px;
-    }
-    .destination-link {
-      font-size: 12px;
-      font-weight: 800;
-      color: #fff;
-    }
-    .destination-link i { transition: transform .2s ease; }
-    .destination-card:hover .destination-link i { transform: translateX(5px); }
-    .coming-badge {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: rgba(255,255,255,.92);
-      color: var(--green);
-      border-radius: 9px;
-      padding: 8px 10px;
-      font-size: 9px;
-      font-weight: 900;
-      letter-spacing: .06em;
-      box-shadow: 0 8px 20px rgba(0,0,0,.14);
-    }
-    .destination-card.coming { cursor: default; }
-
+    .destination-grid{display:grid;grid-template-columns:1.35fr .825fr .825fr;gap:16px}
+    .destination-card{min-height:350px;position:relative;overflow:hidden;border-radius:var(--radius);color:#fff;isolation:isolate;box-shadow:0 12px 30px rgba(16,32,25,.09)}
+    .destination-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;transition:transform .65s ease}
+    .destination-card:hover img{transform:scale(1.06)}
+    .destination-overlay{position:absolute;inset:0;z-index:-2;background:linear-gradient(0deg,rgba(3,25,15,.94),rgba(3,25,15,.08) 72%)}
+    .destination-content{position:absolute;left:24px;right:24px;bottom:23px;z-index:2}
+    .destination-status{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .live-status i{color:#62d983;font-size:7px}
+    .destination-content h3{font-size:31px;line-height:1;margin:13px 0 8px}
+    .destination-content p{color:rgba(255,255,255,.78);font-size:12px;max-width:350px;margin-bottom:15px}
+    .destination-link{font-size:12px;font-weight:800;color:#fff}
+    .destination-link i{transition:transform .2s ease}
+    .destination-card:hover .destination-link i{transform:translateX(5px)}
+    .coming-badge{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.92);color:var(--green);border-radius:9px;padding:8px 10px;font-size:9px;font-weight:900;letter-spacing:.06em;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+    .destination-card.coming{cursor:default}
+    .destination-focus{margin-top:16px;border:1px solid var(--line);border-radius:20px;background:#f7faf8;padding:22px 24px;display:grid;grid-template-columns:1.1fr 2fr;gap:24px;align-items:center}
+    .destination-focus-copy .eyebrow{margin-bottom:7px;color:var(--orange)}
+    .destination-focus-copy h3{font-size:23px;line-height:1.1;margin-bottom:6px}
+    .destination-focus-copy p{font-size:11px;color:var(--muted);max-width:390px}
+    .destination-options{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+    .destination-option{border:1px solid #dfe7e2;background:#fff;border-radius:14px;padding:13px 12px;text-align:left;cursor:pointer;transition:.22s ease}
+    .destination-option:hover{transform:translateY(-3px);border-color:#c9d8cf;box-shadow:0 10px 24px rgba(16,32,25,.07)}
+    .destination-option i{color:var(--orange);font-size:15px;margin-bottom:8px}
+    .destination-option strong{display:block;font-size:11px}
+    .destination-option span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
     /* ---------- STAYS ---------- */
     .stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .stay-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(16,32,25,.06);transition:transform .3s ease,box-shadow .3s ease}
@@ -574,6 +514,9 @@
       cursor: pointer;
     }
     @media (max-width: 980px) {
+      .destination-focus{grid-template-columns:1fr}
+      .destination-options{grid-template-columns:repeat(2,1fr)}
+
       .nav-links { gap: 15px; }
       .service-grid { grid-template-columns: repeat(3, 1fr); }
       .hero { min-height: 650px; }
@@ -732,24 +675,24 @@
 
 
   <!-- DESTINATIONS -->
-  <section id="destinations" style="padding-bottom: 20px;">
+  <section id="destinations" style="padding-bottom: 28px;">
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <h2>Choose Your Destination</h2>
-          <p>Starting with Chikmagalur — with more destinations coming soon.</p>
+          <h2>Start With Where You Want To Go</h2>
+          <p>Chikmagalur is live now. Coorg and Sakleshpur are next.</p>
         </div>
       </div>
 
       <div class="destination-grid">
         <a class="destination-card live reveal" href="#stays">
-          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=85" alt="Chikmagalur hills">
+          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1400&q=85" alt="Chikmagalur hills">
           <div class="destination-overlay"></div>
           <div class="destination-content">
-            <span class="destination-status live-status"><i class="fa-solid fa-circle"></i> Explore Now</span>
+            <span class="destination-status live-status"><i class="fa-solid fa-circle"></i> Live destination</span>
             <h3>Chikmagalur</h3>
-            <p>Homestays, coffee estates, mountains & local experiences.</p>
-            <span class="destination-link">Explore stays <i class="fa-solid fa-arrow-right"></i></span>
+            <p>Handpicked stays, coffee country, mountains, waterfalls and local trip support.</p>
+            <span class="destination-link">Explore Chikmagalur <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
@@ -757,10 +700,10 @@
           <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85" alt="Coorg landscape">
           <div class="destination-overlay"></div>
           <div class="destination-content">
-            <span class="destination-status"><i class="fa-solid fa-clock"></i> Coming Soon</span>
+            <span class="destination-status"><i class="fa-solid fa-clock"></i> Coming soon</span>
             <h3>Coorg</h3>
-            <p>Discover coffee country, forests, stays & experiences.</p>
-            <span class="destination-link">Coming soon <i class="fa-solid fa-arrow-right"></i></span>
+            <p>Coffee country, forests, stays and local experiences.</p>
+            <span class="destination-link">We're preparing it <i class="fa-solid fa-arrow-right"></i></span>
           </div>
           <div class="coming-badge">COMING SOON</div>
         </div>
@@ -769,12 +712,26 @@
           <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85" alt="Sakleshpur landscape">
           <div class="destination-overlay"></div>
           <div class="destination-content">
-            <span class="destination-status"><i class="fa-solid fa-clock"></i> Coming Soon</span>
+            <span class="destination-status"><i class="fa-solid fa-clock"></i> Coming soon</span>
             <h3>Sakleshpur</h3>
-            <p>Western Ghats, plantations, nature stays & escapes.</p>
-            <span class="destination-link">Coming soon <i class="fa-solid fa-arrow-right"></i></span>
+            <p>Western Ghats, plantations, nature stays and escapes.</p>
+            <span class="destination-link">We're preparing it <i class="fa-solid fa-arrow-right"></i></span>
           </div>
           <div class="coming-badge">COMING SOON</div>
+        </div>
+      </div>
+
+      <div class="destination-focus reveal">
+        <div class="destination-focus-copy">
+          <div class="eyebrow">MAKE CHIKMAGALUR YOUR WAY</div>
+          <h3>What are you actually coming here for?</h3>
+          <p>Pick a starting point and Express Stays will carry it into your trip request — stay, local travel and experiences together.</p>
+        </div>
+        <div class="destination-options">
+          <button class="destination-option" type="button" data-experience="Coffee estates"><i class="fa-solid fa-mug-hot"></i><strong>Coffee country</strong><span>Estates & local flavour</span></button>
+          <button class="destination-option" type="button" data-experience="Mountains & viewpoints"><i class="fa-solid fa-mountain-sun"></i><strong>Mountains</strong><span>Peaks & viewpoints</span></button>
+          <button class="destination-option" type="button" data-experience="Waterfalls"><i class="fa-solid fa-water"></i><strong>Waterfalls</strong><span>Nature & day trips</span></button>
+          <button class="destination-option" type="button" data-experience="Slow & peaceful"><i class="fa-solid fa-leaf"></i><strong>Slow escape</strong><span>Quiet stays & nature</span></button>
         </div>
       </div>
     </div>
@@ -1006,6 +963,15 @@
       const serviceIcon=builderState.service==="Stay only"?"bed":"route";
       summary.innerHTML='<span><i class="fa-solid fa-'+serviceIcon+'"></i> '+(builderState.service||"Choose what you need")+'</span><span><i class="fa-solid fa-users"></i> '+(builderState.traveller||"Choose your group")+'</span><span><i class="fa-solid fa-mountain-sun"></i> '+(builderState.experience||"Choose experiences")+'</span>';
     }
+
+    document.querySelectorAll(".destination-option").forEach(option=>option.addEventListener("click",()=>{
+      const value=option.dataset.experience;
+      builderState.experience=value;
+      document.getElementById("experience").value=value;
+      document.querySelectorAll('[data-builder-group="experience"] .builder-chip').forEach(x=>x.classList.toggle("active",x.dataset.value===value));
+      updateSelectionSummary();
+      document.getElementById("match").scrollIntoView({behavior:"smooth",block:"center"});
+    }));
 
     document.getElementById("builderPlan").addEventListener("click",()=>{
       document.getElementById("plan").scrollIntoView({behavior:"smooth",block:"start"});
