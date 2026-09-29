@@ -1,17 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 394" role="img" aria-label="Express Stays">
-<rect width="1000" height="394" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-label="Express Stays">
+<rect width="1000" height="560" fill="#fff"/>
 <g font-family="Arial, Helvetica, sans-serif" font-weight="700">
-<text x="18" y="195" font-size="142" fill="#174d31">e</text>
-<text x="128" y="195" font-size="142" fill="#174d31">x</text>
-<text x="236" y="195" font-size="142" fill="#174d31">press</text>
-<path d="M145 55 L235 180" stroke="#D8AD00" stroke-width="22"/>
-<path d="M190 210 L236 276" stroke="#D8AD00" stroke-width="22"/>
-<g transform="translate(812 18)">
-<path d="M70 0c-43 0-78 35-78 78 0 58 78 126 78 126s78-68 78-126C148 35 113 0 70 0z" fill="#F36A00"/>
-<circle cx="70" cy="76" r="49" fill="#fff"/>
-<path d="M38 78 70 49l32 29v37H38z" fill="#174d31"/>
-<path d="M31 78 70 43l39 35-7 8-32-29-32 29z" fill="#174d31"/>
-<rect x="63" y="91" width="14" height="24" rx="2" fill="#fff"/>
+  <text x="38" y="285" font-size="226" fill="#123B25" letter-spacing="-9">express</text>
+  <g transform="translate(785 48)">
+    <path d="M76 0C31 0 0 34 0 78c0 66 76 142 76 142s76-76 76-142C152 34 121 0 76 0z" fill="#F36A00"/>
+    <circle cx="76" cy="78" r="52" fill="#fff"/>
+    <path d="M35 77 76 43l41 34-8 10-33-27-33 27z" fill="#123B25"/>
+    <path d="M43 78h66v48H43z" fill="#123B25"/>
+    <rect x="70" y="101" width="13" height="25" rx="2" fill="#fff"/>
+    <rect x="104" y="51" width="10" height="24" rx="3" fill="#123B25"/>
+  </g>
+  <g transform="translate(145 72)">
+    <path d="M0 0L128 176" stroke="#D8AD00" stroke-width="23" stroke-linecap="square"/>
+    <path d="M126 0L0 176" stroke="#123B25" stroke-width="23" stroke-linecap="square"/>
+  </g>
+  <text x="510" y="495" font-size="172" fill="#F36A00" letter-spacing="-5">stays</text>
 </g>
-<text x="510" y="350" font-size="125" fill="#F36A00">stays</text>
-</g></svg>
+</svg>
