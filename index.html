@@ -488,6 +488,22 @@
       border-radius:50px;padding:9px 12px;font-size:11px;font-weight:800;
     }
     .property-rating i{color:var(--orange)}
+    .property-story{display:grid;grid-template-columns:1.18fr .82fr;gap:34px;margin:0 0 32px;padding:26px 0 29px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .property-story h3,.property-experiences h3{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#647169;margin:0 0 12px}
+    .property-story-title{font-family:"Playfair Display",serif;font-size:28px;line-height:1.08;letter-spacing:-.025em;color:var(--ink);margin-bottom:10px}
+    .property-story p{font-size:13px;line-height:1.72;color:#59665f;max-width:620px;margin:0}
+    .property-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+    .property-highlight{display:flex;gap:10px;align-items:flex-start}
+    .property-highlight i{color:var(--orange);font-size:13px;width:18px;margin-top:2px}
+    .property-highlight strong{display:block;font-size:11px;color:var(--ink);margin-bottom:3px}
+    .property-highlight span{display:block;font-size:10px;line-height:1.45;color:#718078}
+    .property-experiences{margin:0 0 31px}
+    .property-experience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .property-experience{position:relative;overflow:hidden;min-height:105px;border-radius:15px;background:#edf2ee;border:1px solid #e1e9e3;padding:16px;display:flex;flex-direction:column;justify-content:flex-end}
+    .property-experience i{position:absolute;top:15px;right:15px;color:var(--orange);font-size:13px}
+    .property-experience strong{font-size:11px;color:var(--ink);margin-bottom:4px}
+    .property-experience span{font-size:9px;line-height:1.4;color:#68756e;max-width:90%}
+    @media(max-width:760px){.property-story{grid-template-columns:1fr;gap:24px}.property-highlights{grid-template-columns:1fr 1fr}.property-experience-grid{grid-template-columns:1fr}.property-experience{min-height:88px}}
     .property-description{
       font-size:14px;line-height:1.7;color:#4f5c55;max-width:790px;
       margin:22px 0 27px;
@@ -1343,6 +1359,29 @@
 
         <p class="property-description" id="propertyDescription"></p>
 
+        <div class="property-story">
+          <div>
+            <h3>The Good Earth experience</h3>
+            <div class="property-story-title">A slower side of Chikmagalur.</div>
+            <p>Come here when the stay matters as much as the sightseeing. Good Earth is a comfortable base for families and groups who want greenery around them, time together and a more relaxed homestay atmosphere.</p>
+          </div>
+          <div class="property-highlights">
+            <div class="property-highlight"><i class="fa-solid fa-mug-hot"></i><div><strong>Coffee country</strong><span>Mallandur and its plantation landscape at your doorstep.</span></div></div>
+            <div class="property-highlight"><i class="fa-solid fa-utensils"></i><div><strong>Home-style food</strong><span>Meals that feel part of the homestay experience.</span></div></div>
+            <div class="property-highlight"><i class="fa-solid fa-fire"></i><div><strong>Slow evenings</strong><span>Space for conversations, outdoor time and bonfire moments.</span></div></div>
+            <div class="property-highlight"><i class="fa-solid fa-person-swimming"></i><div><strong>Pool time</strong><span>A simple way to unwind between Chikmagalur outings.</span></div></div>
+          </div>
+        </div>
+
+        <div class="property-experiences">
+          <h3>What makes the stay different</h3>
+          <div class="property-experience-grid">
+            <div class="property-experience"><i class="fa-solid fa-mug-hot"></i><strong>Plantation setting</strong><span>Stay close to the coffee-country landscape around Mallandur.</span></div>
+            <div class="property-experience"><i class="fa-solid fa-people-group"></i><strong>Time together</strong><span>Designed around relaxed family and group stays rather than a rushed hotel routine.</span></div>
+            <div class="property-experience"><i class="fa-solid fa-mountain-sun"></i><strong>Base for exploring</strong><span>Use the stay as your base for Chikmagalur's hills, viewpoints and outdoor experiences.</span></div>
+          </div>
+        </div>
+
         <div class="property-detail-grid">
           <div class="property-section">
             <h3>The stay</h3>
@@ -1379,7 +1418,7 @@
     const propertyData={
       "good-earth":{
         name:"Good Earth Homestay",kicker:"Homestay · Mallandur",location:"Mallandur, Chikmagalur",rating:"4.7",price:"₹2,500",
-        description:"A relaxed Chikmagalur homestay suited to families, with a pool and home-style food.",
+        description:"A slower side of Chikmagalur — a relaxed homestay in the Mallandur area where greenery, home-style food and unhurried evenings are part of the stay.",
         amenities:[["fa-person-swimming","Swimming pool"],["fa-people-roof","Family friendly"],["fa-utensils","Home food"]],
         goodFor:["Families","Relaxed trips","Nature stays"],
         photos:["living area.jpeg","WhatsApp Image 2026-04-03 at 11.08.58 AM (8).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (4).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (6).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (9).jpeg","WhatsApp Image 2026-04-04 at 12.17.29 PM.jpeg","Camp Fire (2).jpeg","Twilight gathering around the fire.png","ge post 2.png"],folder:"good-earth"
