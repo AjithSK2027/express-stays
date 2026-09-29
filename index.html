@@ -1450,7 +1450,7 @@
       document.getElementById("propertyDescription").textContent=p.description;
       document.getElementById("propertyPrice").textContent=p.price;
       document.getElementById("propertyAmenities").innerHTML=p.amenities.map(a=>'<div class="property-amenity"><i class="fa-solid '+a[0]+'"></i><span>'+a[1]+'</span></div>').join("");
-      document.getElementById("propertyGoodFor").innerHTML=p.goodFor.map(x=>'<span class="property-fit">+x+'</span>').join("");
+      document.getElementById("propertyGoodFor").innerHTML=p.goodFor.map(x=>'<span class="property-fit">'+x+'</span>').join("");
 
       propertyThumbs.innerHTML="";
       propertyAllPhotos.innerHTML="";
