@@ -374,6 +374,12 @@
     .plan-whatsapp span{display:block;color:rgba(255,255,255,.78);font-size:10px;margin-top:3px}
     .wa-cta-word{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#baf3ce;margin-bottom:4px}
 
+    .children-ages{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+    .child-age{display:flex;align-items:center;gap:7px}
+    .child-age label{font-size:9px;margin:0;white-space:nowrap;color:#657169}
+    .child-age select{padding:9px 10px;border-radius:10px;font-size:11px}
+    @media (max-width:520px){.children-ages{grid-template-columns:1fr}}
+    
     /* ---------- SERVICES ---------- */
     .service-grid {
       display: grid;
@@ -807,8 +813,8 @@
       <div class="trip-builder-grid">
         <div class="trip-builder-copy reveal">
           <div class="eyebrow">PLAN IT YOUR WAY</div>
-          <h2>Tell us what you want from your trip.</h2>
-          <p>Express Stays is not just a place to book a room. Tell us what you need and we'll help put the stay, local travel and experiences together.</p>
+          <h2>Build your Chikmagalur trip.</h2>
+          <p>Tell us how you’re travelling and what you want to experience. We’ll carry your choices into the trip enquiry below.</p>
           <div class="builder-benefits">
             <div><i class="fa-solid fa-bed"></i><span><strong>Handpicked stays</strong> matched to your group</span></div>
             <div><i class="fa-solid fa-car"></i><span><strong>Local transport</strong> and sightseeing support</span></div>
@@ -832,7 +838,7 @@
           <div class="builder-chips" data-builder-group="experience">
             <button type="button" class="builder-chip" data-value="Coffee estates">Coffee estates</button><button type="button" class="builder-chip" data-value="Mountains & viewpoints">Mountains & viewpoints</button><button type="button" class="builder-chip" data-value="Waterfalls">Waterfalls</button><button type="button" class="builder-chip" data-value="Adventure">Adventure</button><button type="button" class="builder-chip" data-value="Slow & peaceful">Slow & peaceful</button>
           </div>
-          <button class="builder-action" type="button" id="builderPlan"><i class="fa-solid fa-arrow-down"></i> Continue to trip details</button>
+          <button class="builder-action" type="button" id="builderPlan"><i class="fa-solid fa-wand-magic-sparkles"></i> Build My Trip</button>
         </div>
       </div>
     </div>
@@ -865,7 +871,10 @@
           <input type="hidden" id="experience" name="experience">
 
           <div class="selection-summary" id="selectionSummary">
-            <span id="selectedStaySummary"><i class="fa-solid fa-house"></i> No specific stay</span><span><i class="fa-solid fa-bed"></i> Stay only</span><span><i class="fa-solid fa-users"></i> Choose your group</span><span><i class="fa-solid fa-mountain-sun"></i> Choose experiences</span>
+            <span id="selectedStaySummary"><i class="fa-solid fa-house"></i> No specific stay</span>
+            <span id="serviceSummary"><i class="fa-solid fa-bed"></i> Stay only</span>
+            <span id="travellerSummary"><i class="fa-solid fa-users"></i> Choose your group</span>
+            <span id="experienceSummary"><i class="fa-solid fa-mountain-sun"></i> Choose experiences</span>
           </div>
 
           <div class="form-grid">
@@ -874,7 +883,21 @@
             <div class="field"><label for="checkin">CHECK-IN</label><input id="checkin" name="checkin" type="date"></div>
             <div class="field"><label for="checkout">CHECK-OUT</label><input id="checkout" name="checkout" type="date"></div>
             <div class="field"><label for="adults">ADULTS</label><select id="adults" name="adults"><option value="">Select</option><option>1</option><option>2</option><option>3–5</option><option>6–10</option><option>11–20</option><option>20+</option></select></div>
-            <div class="field"><label for="children">CHILDREN</label><select id="children" name="children"><option value="">None / not specified</option><option>1</option><option>2</option><option>3–4</option><option>5+</option></select></div>
+            <div class="field">
+              <label for="children">CHILDREN</label>
+              <select id="children" name="children">
+                <option value="0">No children</option>
+                <option value="1">1 child</option>
+                <option value="2">2 children</option>
+                <option value="3">3 children</option>
+                <option value="4">4 children</option>
+                <option value="5">5 children</option>
+                <option value="6">6 children</option>
+                <option value="7">7 children</option>
+                <option value="8">8 children</option>
+              </select>
+              <div id="childrenAges" class="children-ages" aria-live="polite"></div>
+            </div>
             <div class="field"><label for="stayType">STAY STYLE</label><select id="stayType" name="stay_type"><option value="">Help me choose</option><option>Homestay</option><option>Resort</option><option>Private villa / property</option><option>Nature / plantation stay</option><option>Pool stay</option><option>Budget stay</option><option>Group stay</option></select></div>
             <div class="field"><label for="budget">APPROX. STAY BUDGET</label><select id="budget" name="budget"><option value="">Help me choose</option><option>Under ₹1,500 / night</option><option>₹1,500–₹2,500 / night</option><option>₹2,500–₹4,000 / night</option><option>₹4,000+ / night</option><option>Budget for the whole trip — I'll explain below</option></select></div>
             <div class="field"><label for="transport">TRANSPORT HELP</label><select id="transport" name="transport"><option value="">Not sure yet</option><option>No transport needed</option><option>Local cab / car</option><option>Jeep for sightseeing</option><option>Pickup / drop</option><option>Need help deciding</option></select></div>
@@ -931,7 +954,10 @@
         </div>
       </div>
     </div>
-  </section>    document.documentElement.classList.add("js-reveal");
+  </section>
+
+  <script>
+    document.documentElement.classList.add("js-reveal");
 
     const mobileToggle=document.getElementById("mobileToggle"),navLinks=document.getElementById("navLinks");
     mobileToggle.addEventListener("click",()=>{navLinks.classList.toggle("open");mobileToggle.innerHTML=navLinks.classList.contains("open")?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';});
@@ -940,10 +966,13 @@
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:.12});
     document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
+    const selectedStayInput=document.getElementById("selectedStay");
+    const selectedStaySummary=document.getElementById("selectedStaySummary");
+
     document.querySelectorAll(".stay-enquire").forEach(link=>link.addEventListener("click",()=>{
       const stay=link.dataset.stay;
-      document.getElementById("selectedStay").value=stay;
-      document.getElementById("selectedStaySummary").innerHTML='<i class="fa-solid fa-house"></i> '+stay;
+      selectedStayInput.value=stay;
+      selectedStaySummary.innerHTML='<i class="fa-solid fa-house"></i> '+stay;
     }));
 
     const builderState={service:"Stay only",traveller:"",experience:""};
@@ -955,14 +984,16 @@
       item.classList.add("active");
       const type=group.dataset.builderGroup;
       builderState[type]=item.dataset.value;
-      document.getElementById(type==="service"?"serviceNeed":type==="traveller"?"travellerType":"experience").value=item.dataset.value;
+      const fieldId=type==="service"?"serviceNeed":type==="traveller"?"travellerType":"experience";
+      document.getElementById(fieldId).value=item.dataset.value;
       updateSelectionSummary();
     }));
 
     function updateSelectionSummary(){
-      const summary=document.getElementById("selectionSummary");
       const serviceIcon=builderState.service==="Stay only"?"bed":"route";
-      summary.innerHTML='<span><i class="fa-solid fa-'+serviceIcon+'"></i> '+(builderState.service||"Choose what you need")+'</span><span><i class="fa-solid fa-users"></i> '+(builderState.traveller||"Choose your group")+'</span><span><i class="fa-solid fa-mountain-sun"></i> '+(builderState.experience||"Choose experiences")+'</span>';
+      document.getElementById("serviceSummary").innerHTML='<i class="fa-solid fa-'+serviceIcon+'"></i> '+(builderState.service||"Choose what you need");
+      document.getElementById("travellerSummary").innerHTML='<i class="fa-solid fa-users"></i> '+(builderState.traveller||"Choose your group");
+      document.getElementById("experienceSummary").innerHTML='<i class="fa-solid fa-mountain-sun"></i> '+(builderState.experience||"Choose experiences");
     }
 
     document.querySelectorAll(".destination-option").forEach(option=>option.addEventListener("click",()=>{
@@ -975,9 +1006,27 @@
     }));
 
     document.getElementById("builderPlan").addEventListener("click",()=>{
+      updateSelectionSummary();
       document.getElementById("plan").scrollIntoView({behavior:"smooth",block:"start"});
       setTimeout(()=>document.getElementById("name").focus(),650);
     });
+
+    const childrenSelect=document.getElementById("children");
+    const childrenAges=document.getElementById("childrenAges");
+
+    function renderChildrenAges(){
+      const count=parseInt(childrenSelect.value||"0",10);
+      childrenAges.innerHTML="";
+      if(!count)return;
+      for(let i=1;i<=count;i++){
+        const wrap=document.createElement("div");
+        wrap.className="child-age";
+        wrap.innerHTML='<label for="childAge'+i+'">Child '+i+'</label><select id="childAge'+i+'" name="child_age_'+i+'" required><option value="">Age</option><option>Under 1</option>'+Array.from({length:17},(_,n)=>'<option>'+(n+1)+' years</option>').join("")+'</select>';
+        childrenAges.appendChild(wrap);
+      }
+    }
+    childrenSelect.addEventListener("change",renderChildrenAges);
+    renderChildrenAges();
 
     const form=document.getElementById("tripForm"),toast=document.getElementById("toast");
     form.addEventListener("submit",async e=>{
@@ -990,7 +1039,7 @@ Name: ${data.get("name")}
 WhatsApp: ${data.get("phone")}
 Dates: ${data.get("checkin")||"Flexible"} to ${data.get("checkout")||"Flexible"}
 Adults: ${data.get("adults")||"Not specified"}
-Children: ${data.get("children")||"None / not specified"}
+Children: ${data.get("children")||"No children"}\nChild ages: ${Array.from({length:8},(_,i)=>data.get("child_age_"+(i+1))).filter(Boolean).join(", ")||"Not applicable"}
 What I need: ${data.get("service_need")||"Not specified"}
 Travelling with: ${data.get("traveller_type")||"Not specified"}
 Experiences: ${data.get("experience")||"Not specified"}
@@ -1011,6 +1060,8 @@ Additional details: ${data.get("details")||"None"}`;
         toast.classList.add("show");
         setTimeout(()=>toast.classList.remove("show"),4000);
         form.reset();
+        childrenAges.innerHTML="";
+        renderChildrenAges();
         document.getElementById("selectedStaySummary").innerHTML='<i class="fa-solid fa-house"></i> No specific stay';
         builderState.service="Stay only";builderState.traveller="";builderState.experience="";
         document.querySelectorAll(".need-card,.builder-chip").forEach(x=>x.classList.remove("active"));
