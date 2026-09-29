@@ -1018,6 +1018,7 @@
       const data=new FormData(form);
       const message=`Hi Express Stays, I'd like help planning my Chikmagalur trip.
 
+Stay requested: ${data.get("selected_stay")||"No specific stay"}
 Name: ${data.get("name")}
 WhatsApp: ${data.get("phone")}
 Dates: ${data.get("checkin")||"Flexible"} to ${data.get("checkout")||"Flexible"}
