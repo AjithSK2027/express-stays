@@ -308,82 +308,245 @@
     .stay-enquire{display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#fff;border-radius:999px;padding:10px 13px;font-size:11px;font-weight:800;transition:.22s ease}
     .stay-enquire:hover{background:var(--orange);transform:translateY(-1px)}
     .stay-enquire i{font-size:10px}
-    /* ---------- PROPERTY GALLERY ---------- */
-    .property-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,18,11,.72);backdrop-filter:blur(10px)}
-    .property-modal.open{display:flex}
-    .property-dialog{width:min(1080px,100%);max-height:min(900px,92vh);overflow:auto;background:#fff;border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.3);position:relative}
-    .property-close{position:absolute;right:18px;top:18px;z-index:5;width:42px;height:42px;border:0;border-radius:50%;background:rgba(0,0,0,.58);color:#fff;display:grid;place-items:center;cursor:pointer;font-size:17px}
-    .property-gallery{display:grid;grid-template-columns:2fr 1fr;gap:4px;background:#eef1ee}
-    .property-main-photo{height:430px;position:relative;overflow:hidden;background:linear-gradient(135deg,#dfe9e2,#f6f2e9);display:grid;place-items:center}
-    .property-main-photo img{width:100%;height:100%;object-fit:cover}
-    .property-photo-placeholder{display:none;text-align:center;color:#64736a;padding:30px}
-    .property-main-photo.empty img{display:none}
-    .property-main-photo.empty .property-photo-placeholder{display:block}
-    .property-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-    .property-thumb{border:0;padding:0;cursor:pointer;overflow:hidden;position:relative;background:#dfe9e2;min-height:210px}
-    .property-thumb img{width:100%;height:100%;object-fit:cover;transition:.25s}
-    .property-thumb:hover img{transform:scale(1.04)}
-    .property-thumb.hidden{display:none}
-    .property-info{padding:30px 34px 34px}
-    .property-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--orange);margin-bottom:6px}
-    .property-title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
-    .property-title-row h2{font-size:32px;line-height:1.08;letter-spacing:-.035em;margin-bottom:6px}
-    .property-location{font-size:13px;color:var(--muted)}
-    .property-rating{white-space:nowrap;background:#f5f7f5;border-radius:12px;padding:9px 12px;font-size:12px;font-weight:800}
-    .property-rating i{color:var(--orange)}
-    .property-description{font-size:14px;color:#526058;max-width:780px;margin:20px 0 24px}
-    .property-section{padding-top:22px;margin-top:22px;border-top:1px solid var(--line)}
-    .property-section h3{font-size:17px;margin-bottom:13px}
-    .amenity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .amenity{background:#f6f8f6;border:1px solid #edf1ee;border-radius:13px;padding:12px;font-size:12px;color:#425048;display:flex;align-items:center;gap:9px}
-    .amenity i{color:var(--orange);width:16px;text-align:center}
-    .property-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
-    .property-price{font-size:12px;color:var(--muted)}
-    .property-price strong{font-size:21px;color:var(--ink)}
-    .property-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
-    .property-action{border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 17px;font-size:12px;font-weight:800}
-    .property-action.primary{background:var(--green);color:#fff}
-    .property-action.secondary{background:#f0f4f1;color:var(--green)}
-    .stay-view{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:11px;font-weight:900;margin-top:13px;cursor:pointer}
-    .stay-card{cursor:pointer}
-    .good-earth-card .stay-photo{height:260px}
-    .good-earth-card .stay-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,24,14,.04) 38%,rgba(5,24,14,.68) 100%);pointer-events:none}
-    .good-earth-card .stay-photo img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .35s ease}
-    .good-earth-card:hover .stay-photo img{filter:saturate(1.04)}
-    .good-earth-photo-meta{position:absolute;left:15px;right:15px;bottom:14px;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:10px;font-weight:800;letter-spacing:.02em}
-    .good-earth-photo-meta span{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:rgba(7,31,19,.55);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(9px)}
-    .good-earth-photo-meta i{font-size:10px}
-    .good-earth-card .stay-body{padding:22px}
-    .good-earth-card .stay-type{margin-bottom:7px}
-    .good-earth-card .stay-body h3{font-size:23px;letter-spacing:-.025em;margin-bottom:5px}
-    .good-earth-card .location{margin-bottom:12px}
-    .good-earth-card .stay-fit{font-size:12px;line-height:1.5;margin-bottom:15px;color:#4e5b54}
-    .good-earth-card .stay-fit strong{color:var(--ink)}
-    .good-earth-amenities{display:flex;flex-wrap:wrap;gap:7px}
-    .good-earth-amenity{display:inline-flex;align-items:center;gap:6px;background:#f2f6f3;border:1px solid #e5ece7;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:700;color:#3f4d45}
-    .good-earth-amenity i{color:var(--orange);font-size:10px}
-    .good-earth-card .stay-bottom{margin-top:20px;padding-top:16px}
-    .good-earth-card .price{line-height:1.2}
-    .good-earth-card .price small{display:block;font-size:9px;color:#8a958e;margin-top:4px}
-    .good-earth-actions{display:flex;align-items:center;gap:7px}
-    .good-earth-view{display:inline-flex;align-items:center;gap:7px;background:#eef4f0;color:var(--green);border-radius:999px;padding:10px 12px;font-size:10px;font-weight:900;transition:.22s ease}
-    .good-earth-view:hover{background:#e3eee7;transform:translateY(-1px)}
-    .good-earth-card .stay-enquire{padding:10px 12px}
-    @media (max-width:760px){
-      .good-earth-card .stay-photo{height:235px}
-      .good-earth-card .stay-body{padding:19px}
-      .good-earth-card .stay-bottom{align-items:flex-start;gap:12px}
-      .good-earth-actions{flex-wrap:wrap;justify-content:flex-end}
+    /* ---------- PREMIUM PROPERTY EXPERIENCE ---------- */
+    .good-earth-card{
+      position:relative;
+      border:1px solid #dfe6e1;
+      border-radius:28px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 18px 45px rgba(16,32,25,.09);
+      transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease;
     }
+    .good-earth-card:hover{transform:translateY(-8px);box-shadow:0 28px 65px rgba(16,32,25,.15)}
+    .good-earth-card .stay-photo{height:330px}
+    .good-earth-card .stay-photo::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(4,19,11,.02) 35%,rgba(4,19,11,.72) 100%);
+      pointer-events:none;
+    }
+    .good-earth-card .stay-photo img{transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(.96)}
+    .good-earth-card:hover .stay-photo img{transform:scale(1.045);filter:saturate(1.03)}
+    .good-earth-card .stay-badge{
+      background:rgba(13,59,36,.9);top:17px;left:17px;
+      padding:8px 11px;font-size:9px;letter-spacing:.08em;
+    }
+    .good-earth-card .rating{
+      top:17px;right:17px;padding:8px 10px;border-radius:50px;
+      font-size:11px;background:rgba(255,255,255,.94);
+    }
+    .good-earth-photo-meta{
+      position:absolute;left:18px;right:18px;bottom:17px;z-index:3;
+      display:flex;align-items:flex-end;justify-content:space-between;
+      color:#fff;
+    }
+    .good-earth-photo-title{
+      font-family:"Playfair Display",serif;font-size:29px;line-height:1.02;
+      letter-spacing:-.025em;text-shadow:0 3px 18px rgba(0,0,0,.28);
+    }
+    .good-earth-photo-sub{
+      display:block;margin-top:7px;font-family:"DM Sans",sans-serif;
+      font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+      font-weight:800;opacity:.88;
+    }
+    .good-earth-photo-count{
+      display:inline-flex;align-items:center;gap:7px;padding:9px 11px;
+      border:1px solid rgba(255,255,255,.25);border-radius:12px;
+      background:rgba(7,31,19,.48);backdrop-filter:blur(12px);
+      font-size:10px;font-weight:800;white-space:nowrap;
+    }
+    .good-earth-card .stay-body{padding:23px 23px 21px}
+    .good-earth-card .stay-type{
+      font-size:9px;letter-spacing:.14em;margin-bottom:8px;color:var(--orange)
+    }
+    .good-earth-card .stay-body h3{
+      display:none;
+    }
+    .good-earth-location{
+      display:flex;align-items:center;gap:7px;color:#59665f;font-size:12px;
+      margin-bottom:14px;
+    }
+    .good-earth-location i{color:var(--orange);font-size:11px}
+    .good-earth-intro{
+      color:#3f4d45;font-size:12px;line-height:1.6;
+      max-width:95%;margin-bottom:18px;
+    }
+    .good-earth-intro strong{color:var(--ink);font-weight:800}
+    .good-earth-amenities{
+      display:flex;gap:0;flex-wrap:wrap;border-top:1px solid #edf1ee;
+      border-bottom:1px solid #edf1ee;padding:14px 0;
+    }
+    .good-earth-amenity{
+      display:inline-flex;align-items:center;gap:7px;background:none;border:0;
+      border-radius:0;padding:0 13px;border-right:1px solid #e5ebe7;
+      font-size:10px;font-weight:700;color:#4c5952;
+    }
+    .good-earth-amenity:first-child{padding-left:0}
+    .good-earth-amenity:last-child{border-right:0}
+    .good-earth-amenity i{color:var(--orange);font-size:10px}
+    .good-earth-card .stay-bottom{
+      margin-top:17px;padding-top:0;border-top:0;
+    }
+    .good-earth-card .price{font-size:10px;line-height:1.2}
+    .good-earth-card .price strong{font-family:"Playfair Display",serif;font-size:23px;letter-spacing:-.02em}
+    .good-earth-card .price small{
+      display:block;margin-top:4px;color:#89948d;font-size:8.5px;line-height:1.3;
+    }
+    .good-earth-actions{display:flex;align-items:center;gap:8px}
+    .good-earth-view{
+      display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--green);
+      border:1px solid #ccd8d0;border-radius:50px;padding:11px 14px;
+      font-size:10px;font-weight:900;cursor:pointer;transition:.25s ease;
+    }
+    .good-earth-view:hover{border-color:var(--green);background:#f3f7f4;transform:translateY(-1px)}
+    .good-earth-card .stay-enquire{
+      border-radius:50px;padding:11px 14px;font-size:10px;
+    }
+
+    .property-modal{
+      position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+      padding:22px;background:rgba(5,20,13,.78);backdrop-filter:blur(14px);
+    }
+    .property-modal.open{display:flex}
+    .property-dialog{
+      width:min(1160px,100%);max-height:94vh;overflow:auto;background:#fff;
+      border-radius:30px;box-shadow:0 40px 110px rgba(0,0,0,.38);position:relative;
+      scrollbar-width:thin;
+    }
+    .property-close{
+      position:absolute;right:18px;top:18px;z-index:20;width:42px;height:42px;
+      border:1px solid rgba(255,255,255,.35);border-radius:50%;
+      background:rgba(5,22,14,.62);color:#fff;display:grid;place-items:center;
+      cursor:pointer;font-size:15px;backdrop-filter:blur(12px);
+    }
+    .property-gallery{
+      display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,.75fr);
+      gap:5px;background:#e9eee9;padding:5px;
+    }
+    .property-main-photo{
+      height:520px;position:relative;overflow:hidden;background:#dfe7e1;
+      border-radius:24px 4px 4px 24px;
+    }
+    .property-main-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
+    .property-photo-placeholder{
+      position:absolute;inset:0;display:none;place-items:center;text-align:center;
+      color:#64736a;padding:30px;
+    }
+    .property-main-photo.empty img{display:none}
+    .property-main-photo.empty .property-photo-placeholder{display:grid}
+    .property-photo-placeholder strong{display:block;font-size:14px;margin-top:10px}
+    .property-photo-placeholder span{display:block;font-size:11px;margin-top:4px}
+    .property-thumbs{
+      display:grid;grid-template-rows:1fr 1fr;gap:5px;min-width:0;
+    }
+    .property-thumb{
+      border:0;padding:0;cursor:pointer;overflow:hidden;position:relative;
+      background:#dfe7e1;min-height:0;border-radius:4px;
+    }
+    .property-thumb:first-child{border-radius:4px 24px 4px 4px}
+    .property-thumb:last-child{border-radius:4px 4px 24px 4px}
+    .property-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .3s ease}
+    .property-thumb:hover img{transform:scale(1.035);filter:brightness(.9)}
+    .property-thumb.hidden{display:none}
+    .property-gallery-label{
+      position:absolute;left:28px;bottom:26px;z-index:4;color:#fff;
+      font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+      padding:9px 12px;border-radius:50px;background:rgba(4,22,13,.5);
+      border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);
+    }
+    .property-gallery-more{
+      position:absolute;right:28px;bottom:26px;z-index:4;border:0;cursor:pointer;
+      color:#fff;background:rgba(4,22,13,.68);border:1px solid rgba(255,255,255,.25);
+      border-radius:50px;padding:10px 14px;font-size:10px;font-weight:900;
+      backdrop-filter:blur(10px);
+    }
+    .property-all-photos{
+      display:none;grid-template-columns:repeat(4,1fr);gap:6px;padding:6px;
+      background:#e9eee9;
+    }
+    .property-all-photos.open{display:grid}
+    .property-all-photos button{
+      border:0;padding:0;cursor:pointer;height:180px;overflow:hidden;background:#dfe7e1;
+    }
+    .property-all-photos img{width:100%;height:100%;object-fit:cover;transition:.35s}
+    .property-all-photos button:hover img{transform:scale(1.03);filter:brightness(.9)}
+    .property-info{padding:34px 40px 38px}
+    .property-kicker{
+      font-size:9px;text-transform:uppercase;letter-spacing:.17em;font-weight:900;
+      color:var(--orange);margin-bottom:8px;
+    }
+    .property-title-row{
+      display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
+    }
+    .property-title-row h2{
+      font-family:"Playfair Display",serif;font-size:42px;line-height:1.02;
+      letter-spacing:-.035em;margin-bottom:7px;color:var(--ink);
+    }
+    .property-location{font-size:13px;color:#6b766f}
+    .property-rating{
+      white-space:nowrap;background:#f4f7f4;border:1px solid #e1e8e2;
+      border-radius:50px;padding:9px 12px;font-size:11px;font-weight:800;
+    }
+    .property-rating i{color:var(--orange)}
+    .property-description{
+      font-size:14px;line-height:1.7;color:#4f5c55;max-width:790px;
+      margin:22px 0 27px;
+    }
+    .property-detail-grid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:30px;
+      border-top:1px solid var(--line);padding-top:24px;
+    }
+    .property-section{padding-top:0;margin-top:0;border-top:0}
+    .property-section h3{
+      font-size:10px;text-transform:uppercase;letter-spacing:.14em;
+      color:#647169;margin-bottom:13px;
+    }
+    .amenity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .amenity{
+      background:#f6f8f6;border:1px solid #e8ede9;border-radius:12px;
+      padding:12px;font-size:11px;color:#425048;display:flex;align-items:center;gap:8px;
+    }
+    .amenity i{color:var(--orange);width:15px;text-align:center}
+    .property-goodfor{display:flex;flex-wrap:wrap;gap:7px}
+    .property-goodfor span{
+      border-bottom:1px solid #d8e1db;padding:4px 0 6px;color:#47544d;
+      font-size:11px;margin-right:12px;
+    }
+    .property-bottom{
+      display:flex;justify-content:space-between;align-items:center;gap:20px;
+      margin-top:29px;padding-top:20px;border-top:1px solid var(--line);
+    }
+    .property-price{font-size:10px;color:#69756e}
+    .property-price strong{
+      font-family:"Playfair Display",serif;font-size:25px;color:var(--ink)
+    }
+    .property-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+    .property-action{
+      border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+      border-radius:50px;padding:12px 17px;font-size:11px;font-weight:800;
+    }
+    .property-action.primary{background:var(--green);color:#fff}
+    .property-action.secondary{background:#f1f5f2;color:var(--green);border:1px solid #dce6df}
     @media (max-width:760px){
-      .property-modal{padding:10px}
-      .property-dialog{border-radius:20px;max-height:95vh}
-      .property-gallery{grid-template-columns:1fr}
-      .property-main-photo{height:290px}
-      .property-thumbs{display:none}
-      .property-info{padding:24px 20px 26px}
+      .good-earth-card .stay-photo{height:275px}
+      .good-earth-photo-title{font-size:25px}
+      .good-earth-actions{flex-wrap:wrap;justify-content:flex-end}
+      .good-earth-card .stay-bottom{align-items:flex-start}
+      .property-modal{padding:8px}
+      .property-dialog{border-radius:22px;max-height:96vh}
+      .property-gallery{grid-template-columns:1fr;padding:4px}
+      .property-main-photo{height:310px;border-radius:18px 18px 4px 4px}
+      .property-thumbs{grid-template-columns:1fr 1fr;grid-template-rows:155px}
+      .property-thumb:first-child,.property-thumb:last-child{border-radius:4px}
+      .property-gallery-label{left:18px;bottom:18px}
+      .property-gallery-more{right:18px;bottom:18px}
+      .property-all-photos{grid-template-columns:1fr 1fr}
+      .property-all-photos button{height:145px}
+      .property-info{padding:25px 20px 27px}
       .property-title-row{display:block}
-      .property-rating{display:inline-block;margin-top:10px}
+      .property-title-row h2{font-size:33px}
+      .property-rating{display:inline-flex;margin-top:12px}
+      .property-detail-grid{grid-template-columns:1fr;gap:22px}
       .amenity-grid{grid-template-columns:1fr 1fr}
       .property-bottom{display:block}
       .property-actions{justify-content:flex-start;margin-top:16px}
@@ -873,29 +1036,31 @@
       <div class="stay-grid">
         <article class="stay-card good-earth-card reveal" data-property="good-earth" aria-label="Good Earth Homestay">
           <div class="stay-photo">
-            <img src="assets/stays/good-earth/living%20area.jpeg" alt="Good Earth Homestay, Mallandur" loading="lazy">
-            <span class="stay-badge">Family favourite</span>
+            <img src="assets/stays/good-earth/WhatsApp%20Image%202026-04-04%20at%2012.17.29%20PM.jpeg" alt="Good Earth Homestay, Mallandur" loading="lazy">
+            <span class="stay-badge">Featured stay</span>
             <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
             <div class="good-earth-photo-meta">
-              <span><i class="fa-regular fa-images"></i> 9 real photos</span>
-              <span><i class="fa-solid fa-location-dot"></i> Mallandur</span>
+              <div>
+                <div class="good-earth-photo-title">Good Earth</div>
+                <span class="good-earth-photo-sub">Homestay · Mallandur</span>
+              </div>
+              <span class="good-earth-photo-count"><i class="fa-regular fa-images"></i> 9 photos</span>
             </div>
           </div>
           <div class="stay-body">
-            <div class="stay-type">Homestay · Mallandur</div>
-            <h3>Good Earth Homestay</h3>
-            <div class="location"><i class="fa-solid fa-map-pin"></i> Chikmagalur, Karnataka</div>
-            <div class="stay-fit"><strong>Relaxed family stay</strong> with a swimming pool, home-style food and a nature-focused setting.</div>
+            <div class="stay-type">A quieter side of Chikmagalur</div>
+            <div class="good-earth-location"><i class="fa-solid fa-location-dot"></i> Mallandur, Chikmagalur</div>
+            <p class="good-earth-intro"><strong>Made for slow family stays.</strong> A nature-focused homestay with a pool, home-style food and space to spend time together.</p>
             <div class="good-earth-amenities">
               <span class="good-earth-amenity"><i class="fa-solid fa-person-swimming"></i> Pool</span>
               <span class="good-earth-amenity"><i class="fa-solid fa-utensils"></i> Home Food</span>
               <span class="good-earth-amenity"><i class="fa-solid fa-people-roof"></i> Family Friendly</span>
             </div>
             <div class="stay-bottom">
-              <div class="price">From <strong>₹2,500</strong> / night<small>Pricing may vary by dates & group size.</small></div>
+              <div class="price">From <strong>₹2,500</strong> / night<small>Dates & group size can affect pricing.</small></div>
               <div class="good-earth-actions">
-                <button class="good-earth-view" type="button" data-property-open="good-earth">View stay <i class="fa-solid fa-arrow-right"></i></button>
-                <a class="stay-enquire" href="#plan" data-stay="Good Earth Homestay">Ask about stay</a>
+                <button class="good-earth-view" type="button" data-property-open="good-earth">Explore stay <i class="fa-solid fa-arrow-right"></i></button>
+                <a class="stay-enquire" href="#plan" data-stay="Good Earth Homestay">Plan stay</a>
               </div>
             </div>
           </div>
@@ -1145,36 +1310,54 @@
 
   <div class="toast" id="toast"></div>
 
-  <!-- PROPERTY DETAIL MODAL -->
+  <!-- PREMIUM PROPERTY DETAIL MODAL -->
   <div class="property-modal" id="propertyModal" aria-hidden="true">
     <div class="property-dialog" role="dialog" aria-modal="true" aria-labelledby="propertyModalTitle">
       <button class="property-close" id="propertyClose" type="button" aria-label="Close property details"><i class="fa-solid fa-xmark"></i></button>
+
       <div class="property-gallery">
         <div class="property-main-photo" id="propertyMainPhoto">
           <img id="propertyMainImage" src="" alt="">
-          <div class="property-photo-placeholder"><i class="fa-regular fa-image"></i><strong>Property photos coming soon</strong><span>Real photographs will appear here once uploaded.</span></div>
+          <div class="property-photo-placeholder">
+            <i class="fa-regular fa-image"></i>
+            <strong>Property photos coming soon</strong>
+            <span>Real photographs will appear here once uploaded.</span>
+          </div>
+          <span class="property-gallery-label">Good Earth · Mallandur</span>
+          <button class="property-gallery-more" id="propertyGalleryMore" type="button"><i class="fa-regular fa-images"></i> View all photos</button>
         </div>
         <div class="property-thumbs" id="propertyThumbs"></div>
       </div>
+
+      <div class="property-all-photos" id="propertyAllPhotos"></div>
+
       <div class="property-info">
         <div class="property-kicker" id="propertyKicker"></div>
         <div class="property-title-row">
-          <div><h2 id="propertyModalTitle"></h2><div class="property-location" id="propertyLocation"></div></div>
+          <div>
+            <h2 id="propertyModalTitle"></h2>
+            <div class="property-location" id="propertyLocation"></div>
+          </div>
           <div class="property-rating"><i class="fa-solid fa-star"></i> <span id="propertyRating"></span></div>
         </div>
+
         <p class="property-description" id="propertyDescription"></p>
-        <div class="property-section">
-          <h3>Amenities</h3>
-          <div class="amenity-grid" id="propertyAmenities"></div>
+
+        <div class="property-detail-grid">
+          <div class="property-section">
+            <h3>The stay</h3>
+            <div class="amenity-grid" id="propertyAmenities"></div>
+          </div>
+          <div class="property-section">
+            <h3>Good for</h3>
+            <div class="property-goodfor" id="propertyGoodFor"></div>
+          </div>
         </div>
-        <div class="property-section">
-          <h3>Good for</h3>
-          <div class="tags" id="propertyGoodFor"></div>
-        </div>
+
         <div class="property-bottom">
           <div class="property-price">From <strong id="propertyPrice"></strong> / night</div>
           <div class="property-actions">
-            <button class="property-action secondary" type="button" id="propertyWhatsApp"><i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp</button>
+            <button class="property-action secondary" type="button" id="propertyWhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</button>
             <button class="property-action primary" type="button" id="propertyPlan"><i class="fa-solid fa-route"></i> Plan this stay</button>
           </div>
         </div>
@@ -1216,8 +1399,13 @@
         photos:["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","06.jpg","07.jpg","08.jpg"],folder:"charlies-hidden-leaf"
       }
     };
-    const propertyModal=document.getElementById("propertyModal"),propertyMainImage=document.getElementById("propertyMainImage"),propertyMainPhoto=document.getElementById("propertyMainPhoto"),propertyThumbs=document.getElementById("propertyThumbs");
+    const propertyModal=document.getElementById("propertyModal"),propertyMainImage=document.getElementById("propertyMainImage"),propertyMainPhoto=document.getElementById("propertyMainPhoto"),propertyThumbs=document.getElementById("propertyThumbs"),propertyAllPhotos=document.getElementById("propertyAllPhotos"),propertyGalleryMore=document.getElementById("propertyGalleryMore");
     let activeProperty=null;
+
+    function propertyUrl(folder,file){
+      return "assets/stays/"+folder+"/"+encodeURIComponent(file).replace(/%2F/g,"/");
+    }
+
     function openProperty(key){
       const p=propertyData[key]; if(!p)return;
       activeProperty=key;
@@ -1228,27 +1416,63 @@
       document.getElementById("propertyDescription").textContent=p.description;
       document.getElementById("propertyPrice").textContent=p.price;
       document.getElementById("propertyAmenities").innerHTML=p.amenities.map(a=>'<div class="amenity"><i class="fa-solid '+a[0]+'"></i><span>'+a[1]+'</span></div>').join("");
-      document.getElementById("propertyGoodFor").innerHTML=p.goodFor.map(x=>'<span class="tag">'+x+'</span>').join("");
+      document.getElementById("propertyGoodFor").innerHTML=p.goodFor.map(x=>'<span>'+x+'</span>').join("");
+
       propertyThumbs.innerHTML="";
-      const folder="assets/stays/"+p.folder+"/";
+      propertyAllPhotos.innerHTML="";
+      propertyAllPhotos.classList.remove("open");
+      propertyGalleryMore.innerHTML='<i class="fa-regular fa-images"></i> View all '+p.photos.length+' photos';
+
+      const folder=p.folder+"/";
       p.photos.forEach((file,index)=>{
-        const btn=document.createElement("button"); btn.type="button"; btn.className="property-thumb";
-        const img=document.createElement("img"); img.src=folder+file; img.alt=p.name+" photo "+(index+1);
-        img.onerror=()=>btn.classList.add("hidden");
-        btn.appendChild(img); btn.addEventListener("click",()=>setPropertyImage(img.src,p.name+" photo "+(index+1)));
-        propertyThumbs.appendChild(btn);
+        const src=propertyUrl(p.folder,file);
+
+        if(index<2){
+          const btn=document.createElement("button");
+          btn.type="button"; btn.className="property-thumb";
+          const img=document.createElement("img"); img.src=src; img.alt=p.name+" photo "+(index+2);
+          img.onerror=()=>btn.classList.add("hidden");
+          btn.appendChild(img);
+          btn.addEventListener("click",()=>setPropertyImage(src,p.name+" photo "+(index+2)));
+          propertyThumbs.appendChild(btn);
+        }
+
+        const allBtn=document.createElement("button");
+        allBtn.type="button";
+        const allImg=document.createElement("img"); allImg.src=src; allImg.alt=p.name+" photo "+(index+1);
+        allImg.onerror=()=>allBtn.remove();
+        allBtn.appendChild(allImg);
+        allBtn.addEventListener("click",()=>setPropertyImage(src,p.name+" photo "+(index+1)));
+        propertyAllPhotos.appendChild(allBtn);
       });
-      setPropertyImage(folder+p.photos[0],p.name+" photo 1");
-      propertyModal.classList.add("open"); propertyModal.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
+
+      setPropertyImage(propertyUrl(p.folder,p.photos[0]),p.name+" photo 1");
+      propertyModal.classList.add("open");
+      propertyModal.setAttribute("aria-hidden","false");
+      document.body.style.overflow="hidden";
     }
+
     function setPropertyImage(src,alt){
       propertyMainPhoto.classList.remove("empty");
-      propertyMainImage.src=src; propertyMainImage.alt=alt;
+      propertyMainImage.src=src;
+      propertyMainImage.alt=alt;
       propertyMainImage.onerror=()=>propertyMainPhoto.classList.add("empty");
     }
+
     function closeProperty(){
-      propertyModal.classList.remove("open"); propertyModal.setAttribute("aria-hidden","true"); document.body.style.overflow="";
+      propertyModal.classList.remove("open");
+      propertyModal.setAttribute("aria-hidden","true");
+      document.body.style.overflow="";
     }
+
+    propertyGalleryMore.addEventListener("click",()=>{
+      propertyAllPhotos.classList.toggle("open");
+      propertyGalleryMore.innerHTML=propertyAllPhotos.classList.contains("open")
+        ? '<i class="fa-solid fa-chevron-up"></i> Hide gallery'
+        : '<i class="fa-regular fa-images"></i> View all '+(activeProperty?propertyData[activeProperty].photos.length:0)+' photos';
+      if(propertyAllPhotos.classList.contains("open")) propertyAllPhotos.scrollIntoView({behavior:"smooth",block:"center"});
+    });
+
     document.querySelectorAll("[data-property-open]").forEach(el=>el.addEventListener("click",e=>{e.stopPropagation();openProperty(el.dataset.propertyOpen)}));
     document.querySelectorAll(".stay-card").forEach(card=>card.addEventListener("click",e=>{
       if(e.target.closest(".stay-enquire")||e.target.closest("[data-property-open]"))return;
