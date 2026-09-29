@@ -488,94 +488,26 @@
       border-radius:50px;padding:9px 12px;font-size:11px;font-weight:800;
     }
     .property-rating i{color:var(--orange)}
-    .property-story{
-      margin:0 0 34px;
-      background:#0d3b24;
-      color:#fff;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      min-height:330px;
-      overflow:hidden;
-      border-radius:2px;
-    }
-    .property-story-copy{
-      padding:42px 44px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-    .property-story h3,.property-experiences h3{
-      font-size:9px;text-transform:uppercase;letter-spacing:.18em;
-      color:#d8ad00;margin:0 0 14px;font-weight:900;
-    }
-    .property-story-title{
-      font-family:"Playfair Display",serif;
-      font-size:38px;line-height:1.02;letter-spacing:-.035em;
-      color:#fff;margin-bottom:16px;max-width:430px;
-    }
-    .property-story-copy p{
-      font-size:13px;line-height:1.75;color:rgba(255,255,255,.72);
-      max-width:490px;margin:0;
-    }
-    .property-story-image{
-      min-height:330px;position:relative;overflow:hidden;
-    }
-    .property-story-image img{width:100%;height:100%;object-fit:cover;display:block}
-    .property-story-image::after{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(90deg,rgba(13,59,36,.15),transparent 40%);
-    }
-    .property-highlights{
-      display:grid;grid-template-columns:1fr 1fr;gap:24px 28px;
-      margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);
-    }
-    .property-highlight{display:flex;gap:10px;align-items:flex-start}
-    .property-highlight i{color:#ff8a21;font-size:12px;width:16px;margin-top:2px}
-    .property-highlight strong{display:block;font-size:10px;color:#fff;margin-bottom:4px}
-    .property-highlight span{display:block;font-size:9px;line-height:1.45;color:rgba(255,255,255,.55)}
-    .property-experiences{margin:0 0 34px}
-    .property-experiences h3{color:#647169;margin-bottom:15px}
-    .property-experience-grid{
-      display:grid;grid-template-columns:1.15fr .925fr .925fr;gap:6px;
-    }
-    .property-experience{
-      position:relative;overflow:hidden;min-height:245px;
-      background:#17251e;color:#fff;padding:20px;
-      display:flex;flex-direction:column;justify-content:flex-end;
-    }
-    .property-experience:first-child{border-radius:18px 0 0 18px}
-    .property-experience:last-child{border-radius:0 18px 18px 0}
-    .property-experience img{
-      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-      opacity:.82;transition:transform .7s ease,opacity .35s ease;
-    }
-    .property-experience:hover img{transform:scale(1.04);opacity:.92}
-    .property-experience::after{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,.03) 30%,rgba(0,0,0,.8) 100%);
-    }
-    .property-experience-content{position:relative;z-index:2}
-    .property-experience i{
-      position:absolute;top:17px;right:17px;z-index:2;color:#fff;
-      font-size:13px;text-shadow:0 2px 8px rgba(0,0,0,.3)
-    }
-    .property-experience strong{
-      display:block;font-family:"Playfair Display",serif;font-size:20px;
-      color:#fff;margin-bottom:5px
-    }
-    .property-experience span{
-      display:block;font-size:9px;line-height:1.45;
-      color:rgba(255,255,255,.78);max-width:250px
-    }
-    @media(max-width:760px){
-      .property-story{grid-template-columns:1fr;min-height:0}
-      .property-story-copy{padding:30px 24px}
-      .property-story-image{min-height:260px}
-      .property-story-title{font-size:31px}
-      .property-highlights{gap:18px 14px}
-      .property-experience-grid{grid-template-columns:1fr}
-      .property-experience,.property-experience:first-child,.property-experience:last-child{min-height:210px;border-radius:14px}
-    }
+    .property-overview{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;margin:0 0 30px;padding:28px 0 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .property-overview-copy{padding-right:18px}
+    .property-overview-label,.property-section-title{font-size:9px;text-transform:uppercase;letter-spacing:.17em;font-weight:900;color:#647169;margin-bottom:11px}
+    .property-overview-title{font-family:"Playfair Display",serif;font-size:32px;line-height:1.08;letter-spacing:-.03em;color:var(--ink);margin-bottom:13px}
+    .property-overview-copy p{font-size:13px;line-height:1.7;color:#59665f;max-width:570px;margin:0}
+    .property-why{background:#0d3b24;color:#fff;border-radius:20px;padding:24px 25px;display:grid;grid-template-columns:1fr 1fr;gap:19px 22px}
+    .property-why-title{grid-column:1/-1;font-family:"Playfair Display",serif;font-size:21px;line-height:1.1;color:#fff}
+    .property-why-item{display:flex;gap:9px;align-items:flex-start}
+    .property-why-item i{color:#ff8a21;font-size:12px;margin-top:3px;width:15px}
+    .property-why-item strong{display:block;font-size:10px;color:#fff;margin-bottom:3px}
+    .property-why-item span{display:block;font-size:9px;line-height:1.45;color:rgba(255,255,255,.58)}
+    .property-practical{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin:0 0 28px}
+    .property-practical-box{border:1px solid #e1e8e2;border-radius:18px;padding:20px 21px;background:#f7f9f7}
+    .property-practical-box .property-section-title{margin-bottom:14px}
+    .property-amenity-list{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+    .property-amenity{display:flex;align-items:center;gap:7px;font-size:10px;color:#445149;padding:10px 9px;background:#fff;border:1px solid #e8ede9;border-radius:10px}
+    .property-amenity i{color:var(--orange);font-size:10px}
+    .property-fit-list{display:flex;flex-wrap:wrap;gap:0 14px}
+    .property-fit{font-size:10px;color:#46534b;padding:8px 0 7px;border-bottom:1px solid #d7e1da}
+    @media(max-width:760px){.property-overview{grid-template-columns:1fr;gap:20px}.property-overview-copy{padding-right:0}.property-overview-title{font-size:29px}.property-why{grid-template-columns:1fr 1fr}.property-practical{grid-template-columns:1fr}.property-amenity-list{grid-template-columns:1fr 1fr}}
     .property-description{
       font-size:14px;line-height:1.7;color:#4f5c55;max-width:790px;
       margin:22px 0 27px;
@@ -1431,31 +1363,28 @@
 
         <p class="property-description" id="propertyDescription"></p>
 
-        <div class="property-story" id="propertyStory">
-          <div class="property-story-copy">
-            <h3>The Good Earth experience</h3>
-            <div class="property-story-title" id="propertyStoryTitle"></div>
-            <p id="propertyStoryCopy"></p>
-            <div class="property-highlights" id="propertyStoryFeatures"></div>
+        <div class="property-overview">
+          <div class="property-overview-copy">
+            <div class="property-overview-label">Why Good Earth</div>
+            <div class="property-overview-title">A relaxed stay for people who want more time together.</div>
+            <p>Good Earth works well as a comfortable base in Mallandur — especially for families and groups who want greenery, home-style food, a pool and a quieter pace between Chikmagalur outings.</p>
           </div>
-          <div class="property-story-image">
-            <img id="propertyStoryImage" src="" alt="">
+          <div class="property-why">
+            <div class="property-why-title">What you can expect</div>
+            <div class="property-why-item"><i class="fa-solid fa-mug-hot"></i><div><strong>Coffee country</strong><span>Mallandur's plantation landscape and greenery.</span></div></div>
+            <div class="property-why-item"><i class="fa-solid fa-utensils"></i><div><strong>Home-style meals</strong><span>Simple food that feels part of the stay.</span></div></div>
+            <div class="property-why-item"><i class="fa-solid fa-fire"></i><div><strong>Relaxed evenings</strong><span>Time outdoors, around the fire and together.</span></div></div>
+            <div class="property-why-item"><i class="fa-solid fa-person-swimming"></i><div><strong>Swimming pool</strong><span>Unwind at the property between outings.</span></div></div>
           </div>
         </div>
-
-        <div class="property-experiences" id="propertyExperiences">
-          <h3>See the stay</h3>
-          <div class="property-experience-grid" id="propertyExperienceGrid"></div>
-        </div>
-
-        <div class="property-detail-grid">
-          <div class="property-section">
-            <h3>The stay</h3>
-            <div class="amenity-grid" id="propertyAmenities"></div>
+        <div class="property-practical">
+          <div class="property-practical-box">
+            <div class="property-section-title">The stay</div>
+            <div class="property-amenity-list" id="propertyAmenities"></div>
           </div>
-          <div class="property-section">
-            <h3>Good for</h3>
-            <div class="property-goodfor" id="propertyGoodFor"></div>
+          <div class="property-practical-box">
+            <div class="property-section-title">Good for</div>
+            <div class="property-fit-list" id="propertyGoodFor"></div>
           </div>
         </div>
 
@@ -1487,19 +1416,6 @@
         description:"A slower side of Chikmagalur — a relaxed homestay in the Mallandur area where greenery, home-style food and unhurried evenings are part of the stay.",
         amenities:[["fa-person-swimming","Swimming pool"],["fa-people-roof","Family friendly"],["fa-utensils","Home food"]],
         goodFor:["Families","Relaxed trips","Nature stays"],
-        storyTitle:"A slower side of Chikmagalur.",
-        storyCopy:"Come here when the stay matters as much as the sightseeing. Good Earth is a comfortable base for families and groups who want greenery around them, time together and a more relaxed homestay atmosphere.",
-        storyFeatures:[
-          ["fa-mug-hot","Coffee country","Mallandur and its plantation landscape."],
-          ["fa-utensils","Home-style food","Meals that feel part of the homestay."],
-          ["fa-fire","Slow evenings","Outdoor time, conversations and bonfire moments."],
-          ["fa-person-swimming","Pool time","A place to unwind between outings."]
-        ],
-        visualStory:[
-          ["WhatsApp Image 2026-04-04 at 12.17.29 PM.jpeg","Pool time","Slow afternoons by the water."],
-          ["living area.jpeg","The homestay","A comfortable place to spend the evening."],
-          ["Camp Fire (2).jpeg","After sunset","Gather, talk and stay a little longer."]
-        ],
         photos:["living area.jpeg","WhatsApp Image 2026-04-03 at 11.08.58 AM (8).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (4).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (6).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (9).jpeg","WhatsApp Image 2026-04-04 at 12.17.29 PM.jpeg","Camp Fire (2).jpeg","Twilight gathering around the fire.png","ge post 2.png"],folder:"good-earth"
       },
       "camp-alpha":{
@@ -1532,23 +1448,9 @@
       document.getElementById("propertyLocation").textContent=p.location;
       document.getElementById("propertyRating").textContent=p.rating;
       document.getElementById("propertyDescription").textContent=p.description;
-      const story=document.getElementById("propertyStory"), experiences=document.getElementById("propertyExperiences");
-      if(p.storyTitle){
-        story.style.display="grid";
-        document.getElementById("propertyStoryTitle").textContent=p.storyTitle;
-        document.getElementById("propertyStoryCopy").textContent=p.storyCopy;
-        document.getElementById("propertyStoryImage").src=propertyUrl(p.folder,p.visualStory[0][0]);
-        document.getElementById("propertyStoryImage").alt=p.visualStory[0][1];
-        document.getElementById("propertyStoryFeatures").innerHTML=p.storyFeatures.map(a=>'<div class="property-highlight"><i class="fa-solid '+a[0]+'"></i><div><strong>'+a[1]+'</strong><span>'+a[2]+'</span></div></div>').join("");
-        document.getElementById("propertyExperienceGrid").innerHTML=p.visualStory.map(a=>'<div class="property-experience"><img src="'+propertyUrl(p.folder,a[0])+'" alt="'+a[1]+'" onerror="this.style.display=\'none\'"><i class="fa-solid fa-arrow-up-right-from-square"></i><div class="property-experience-content"><strong>'+a[1]+'</strong><span>'+a[2]+'</span></div></div>').join("");
-        experiences.style.display="block";
-      }else{
-        story.style.display="none";
-        experiences.style.display="none";
-      }
       document.getElementById("propertyPrice").textContent=p.price;
-      document.getElementById("propertyAmenities").innerHTML=p.amenities.map(a=>'<div class="amenity"><i class="fa-solid '+a[0]+'"></i><span>'+a[1]+'</span></div>').join("");
-      document.getElementById("propertyGoodFor").innerHTML=p.goodFor.map(x=>'<span>'+x+'</span>').join("");
+      document.getElementById("propertyAmenities").innerHTML=p.amenities.map(a=>'<div class="property-amenity"><i class="fa-solid '+a[0]+'"></i><span>'+a[1]+'</span></div>').join("");
+      document.getElementById("propertyGoodFor").innerHTML=p.goodFor.map(x=>'<span class="property-fit">+x+'</span>').join("");
 
       propertyThumbs.innerHTML="";
       propertyAllPhotos.innerHTML="";
