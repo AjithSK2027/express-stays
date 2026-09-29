@@ -65,9 +65,10 @@
       justify-content: space-between;
       gap: 28px;
     }
-    .brand img {
+    .brand-logo {
       width: 142px;
       height: auto;
+      display: block;
       filter: drop-shadow(0 2px 8px rgba(0,0,0,.08));
     }
     .nav-links {
@@ -595,9 +596,7 @@
     /* ---------- FOOTER ---------- */
     footer { background: #071d12; color: #fff; padding: 55px 0 22px; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 45px; }
-    .footer-brand-lockup { display: inline-flex; align-items: baseline; gap: 2px; margin-bottom: 16px; font-size: 29px; line-height: 1; font-weight: 900; letter-spacing: -.055em; }
-    .footer-brand-lockup .express { color: #fff; }
-    .footer-brand-lockup .stays { color: #ff8a21; }
+    .footer-logo { width: 150px; height: auto; display: block; margin-bottom: 16px; }
     .footer-brand p { color: rgba(255,255,255,.6); font-size: 12px; max-width: 320px; }
     footer h4 { margin-bottom: 14px; font-size: 13px; }
     .footer-links { display: grid; gap: 8px; }
@@ -645,7 +644,7 @@
     <div class="container">
       <nav>
         <a href="#home" class="brand" aria-label="Express Stays home">
-          <span class="brand-lockup" aria-label="Express Stays"><span class="brand-mark">×</span><span class="brand-word"><b>express</b> <em>stays</em></span></span>
+          <img class="brand-logo" src="assets/express-stays-logo.svg" alt="Express Stays">
         </a>
 
         <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
@@ -1006,7 +1005,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-brand-lockup" aria-label="Express Stays"><span class="express">express</span><span class="stays">stays</span></div>
+          <img class="footer-logo" src="assets/express-stays-logo.svg" alt="Express Stays">
           <p>Stay. Explore. Experience Chikmagalur.<br><br>Handpicked homestays, local travel assistance and experiences in and around Chikmagalur.</p>
         </div>
 
