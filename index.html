@@ -346,6 +346,35 @@
     .property-action.secondary{background:#f0f4f1;color:var(--green)}
     .stay-view{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:11px;font-weight:900;margin-top:13px;cursor:pointer}
     .stay-card{cursor:pointer}
+    .good-earth-card .stay-photo{height:260px}
+    .good-earth-card .stay-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,24,14,.04) 38%,rgba(5,24,14,.68) 100%);pointer-events:none}
+    .good-earth-card .stay-photo img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .35s ease}
+    .good-earth-card:hover .stay-photo img{filter:saturate(1.04)}
+    .good-earth-photo-meta{position:absolute;left:15px;right:15px;bottom:14px;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:10px;font-weight:800;letter-spacing:.02em}
+    .good-earth-photo-meta span{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:rgba(7,31,19,.55);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(9px)}
+    .good-earth-photo-meta i{font-size:10px}
+    .good-earth-card .stay-body{padding:22px}
+    .good-earth-card .stay-type{margin-bottom:7px}
+    .good-earth-card .stay-body h3{font-size:23px;letter-spacing:-.025em;margin-bottom:5px}
+    .good-earth-card .location{margin-bottom:12px}
+    .good-earth-card .stay-fit{font-size:12px;line-height:1.5;margin-bottom:15px;color:#4e5b54}
+    .good-earth-card .stay-fit strong{color:var(--ink)}
+    .good-earth-amenities{display:flex;flex-wrap:wrap;gap:7px}
+    .good-earth-amenity{display:inline-flex;align-items:center;gap:6px;background:#f2f6f3;border:1px solid #e5ece7;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:700;color:#3f4d45}
+    .good-earth-amenity i{color:var(--orange);font-size:10px}
+    .good-earth-card .stay-bottom{margin-top:20px;padding-top:16px}
+    .good-earth-card .price{line-height:1.2}
+    .good-earth-card .price small{display:block;font-size:9px;color:#8a958e;margin-top:4px}
+    .good-earth-actions{display:flex;align-items:center;gap:7px}
+    .good-earth-view{display:inline-flex;align-items:center;gap:7px;background:#eef4f0;color:var(--green);border-radius:999px;padding:10px 12px;font-size:10px;font-weight:900;transition:.22s ease}
+    .good-earth-view:hover{background:#e3eee7;transform:translateY(-1px)}
+    .good-earth-card .stay-enquire{padding:10px 12px}
+    @media (max-width:760px){
+      .good-earth-card .stay-photo{height:235px}
+      .good-earth-card .stay-body{padding:19px}
+      .good-earth-card .stay-bottom{align-items:flex-start;gap:12px}
+      .good-earth-actions{flex-wrap:wrap;justify-content:flex-end}
+    }
     @media (max-width:760px){
       .property-modal{padding:10px}
       .property-dialog{border-radius:20px;max-height:95vh}
@@ -842,22 +871,32 @@
       </div>
 
       <div class="stay-grid">
-        <article class="stay-card reveal" data-property="good-earth">
+        <article class="stay-card good-earth-card reveal" data-property="good-earth" aria-label="Good Earth Homestay">
           <div class="stay-photo">
-            <img src="assets/stays/good-earth/living%20area.jpeg" alt="Good Earth Homestay">
+            <img src="assets/stays/good-earth/living%20area.jpeg" alt="Good Earth Homestay, Mallandur" loading="lazy">
             <span class="stay-badge">Family favourite</span>
             <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+            <div class="good-earth-photo-meta">
+              <span><i class="fa-regular fa-images"></i> 9 real photos</span>
+              <span><i class="fa-solid fa-location-dot"></i> Mallandur</span>
+            </div>
           </div>
           <div class="stay-body">
             <div class="stay-type">Homestay · Mallandur</div>
             <h3>Good Earth Homestay</h3>
-            <div class="location"><i class="fa-solid fa-location-dot"></i> Mallandur, Chikmagalur</div>
-            <div class="stay-fit"><strong>Best suited for:</strong> Families looking for a relaxed stay with a pool and home food.</div>
-            <div class="tags"><span class="tag">Pool</span><span class="tag">Family Friendly</span><span class="tag">Home Food</span></div>
-            <div class="stay-view" data-property-open="good-earth">View photos & amenities <i class="fa-solid fa-arrow-right"></i></div>
+            <div class="location"><i class="fa-solid fa-map-pin"></i> Chikmagalur, Karnataka</div>
+            <div class="stay-fit"><strong>Relaxed family stay</strong> with a swimming pool, home-style food and a nature-focused setting.</div>
+            <div class="good-earth-amenities">
+              <span class="good-earth-amenity"><i class="fa-solid fa-person-swimming"></i> Pool</span>
+              <span class="good-earth-amenity"><i class="fa-solid fa-utensils"></i> Home Food</span>
+              <span class="good-earth-amenity"><i class="fa-solid fa-people-roof"></i> Family Friendly</span>
+            </div>
             <div class="stay-bottom">
-              <div class="price">From <strong>₹2,500</strong> / night</div>
-              <a class="stay-enquire" href="#plan" data-stay="Good Earth Homestay">Ask about stay <i class="fa-solid fa-arrow-right"></i></a>
+              <div class="price">From <strong>₹2,500</strong> / night<small>Pricing may vary by dates & group size.</small></div>
+              <div class="good-earth-actions">
+                <button class="good-earth-view" type="button" data-property-open="good-earth">View stay <i class="fa-solid fa-arrow-right"></i></button>
+                <a class="stay-enquire" href="#plan" data-stay="Good Earth Homestay">Ask about stay</a>
+              </div>
             </div>
           </div>
         </article>
