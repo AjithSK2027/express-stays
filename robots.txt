@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ajithsk2027.github.io/express-stays/sitemap.xml
