@@ -341,46 +341,38 @@
     .plan-point strong { display: block; font-size: 13px; }
     .plan-point span { display: block; color: rgba(255,255,255,.65); font-size: 11px; margin-top: 3px; }
 
-    .form-card {
-      background: #fff;
-      color: var(--ink);
-      padding: 26px;
-      border-radius: 20px;
-      box-shadow: 0 24px 65px rgba(0,0,0,.25);
-    }
-    .form-title { font-size: 15px; font-weight: 800; margin-bottom: 16px; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
-    .field.full { grid-column: 1 / -1; }
-    label { display: block; font-size: 11px; font-weight: 800; margin-bottom: 6px; color: #4d5b53; }
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid #dfe6e1;
-      border-radius: 10px;
-      padding: 12px 13px;
-      outline: none;
-      background: #fbfcfb;
-      color: var(--ink);
-      transition: border .2s ease, box-shadow .2s ease;
-    }
-    textarea { min-height: 88px; resize: vertical; }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(243,106,0,.09);
-    }
-    .submit {
-      width: 100%;
-      margin-top: 14px;
-      background: var(--orange);
-      color: #fff;
-      border: 0;
-      border-radius: 11px;
-      padding: 14px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: .25s ease;
-    }
-    .submit:hover { transform: translateY(-2px); background: #dc5e00; }
-    .form-note { text-align: center; color: #7a847e; font-size: 10px; margin-top: 10px; }
+    .form-card{position:relative;background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(247,251,248,.91));color:var(--ink);padding:30px;border:1px solid rgba(255,255,255,.82);border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.28),0 2px 0 rgba(255,255,255,.65) inset;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);overflow:hidden}
+    .form-card::before{content:"";position:absolute;inset:-40% 45% 45% -20%;background:radial-gradient(circle,rgba(255,255,255,.9),transparent 62%);pointer-events:none}
+    .form-heading,.selection-summary,.form-grid,.submit,.form-note{position:relative;z-index:1}
+    .form-heading{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:18px}
+    .form-title{font-size:20px;font-weight:900;letter-spacing:-.025em;margin-bottom:4px}
+    .form-subtitle{font-size:10px;color:var(--muted);max-width:430px}
+    .form-step{background:#eaf3ed;color:var(--green);border:1px solid #d7e6dc;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900;white-space:nowrap}
+    .selection-summary{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;padding:10px;background:rgba(234,243,237,.7);border:1px solid #e1ebe4;border-radius:14px}
+    .selection-summary span{background:#fff;color:#536159;border:1px solid #e5ebe7;border-radius:999px;padding:6px 9px;font-size:9px;font-weight:700}
+    .selection-summary i{color:var(--orange);margin-right:4px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field.full{grid-column:1/-1}
+    label{display:block;font-size:10px;font-weight:900;letter-spacing:.03em;margin-bottom:6px;color:#4d5b53}
+    input,select,textarea{width:100%;border:1px solid #dce5df;border-radius:12px;padding:12px 13px;outline:none;background:rgba(255,255,255,.72);color:var(--ink);transition:border .2s ease,box-shadow .2s ease,transform .2s ease}
+    input:hover,select:hover,textarea:hover{border-color:#c9d8cf}
+    input:focus,select:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(243,106,0,.1),0 8px 20px rgba(16,32,25,.05);background:#fff}
+    textarea{min-height:96px;resize:vertical}
+    .discount-box{grid-column:1/-1;padding:16px;border-radius:16px;background:linear-gradient(135deg,#f5faf6,#edf5ef);border:1px solid #dce9df}
+    .discount-box-title{font-size:11px;font-weight:900;color:var(--green);margin-bottom:9px}
+    .discount-options{display:flex;flex-wrap:wrap;gap:8px}
+    .discount-option{display:flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid #d5e2d9;background:#fff;border-radius:999px;font-size:10px;font-weight:700;color:#46544c;cursor:pointer}
+    .discount-option input{width:auto;accent-color:var(--orange)}
+    .discount-note{font-size:9px;color:var(--muted);margin-top:8px}
+    .submit{width:100%;margin-top:16px;background:linear-gradient(135deg,var(--orange),#ff8120);color:#fff;border:0;border-radius:13px;padding:15px;font-weight:900;cursor:pointer;transition:.25s ease;box-shadow:0 12px 25px rgba(243,106,0,.24)}
+    .submit:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(243,106,0,.3)}
+    .form-note{text-align:center;color:#7a847e;font-size:10px;margin-top:10px}
+    .plan-whatsapp{display:flex;align-items:center;gap:14px;margin-top:24px;padding:17px 18px;border-radius:18px;background:linear-gradient(135deg,#0b8f3d,#087b2d);color:#fff;box-shadow:0 15px 35px rgba(8,123,45,.25);transition:.25s ease}
+    .plan-whatsapp:hover{transform:translateY(-3px);box-shadow:0 20px 42px rgba(8,123,45,.32)}
+    .plan-whatsapp .wa-icon{width:48px;height:48px;min-width:48px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16);font-size:25px}
+    .plan-whatsapp strong{display:block;font-size:16px;letter-spacing:-.02em}
+    .plan-whatsapp span{display:block;color:rgba(255,255,255,.78);font-size:10px;margin-top:3px}
+    .wa-cta-word{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#baf3ce;margin-bottom:4px}
 
     /* ---------- SERVICES ---------- */
     .service-grid {
@@ -859,7 +851,7 @@
             <div class="plan-point"><i class="fa-solid fa-car"></i><strong>Local travel</strong><span>Cars, jeeps and sightseeing support.</span></div>
             <div class="plan-point"><i class="fa-solid fa-mountain-sun"></i><strong>Experiences</strong><span>Coffee, peaks, waterfalls and local spots.</span></div>
           </div>
-          <div class="plan-note"><i class="fa-brands fa-whatsapp"></i><div><strong>Prefer WhatsApp?</strong><span>You can also send us your requirements directly and talk to a local person.</span></div></div>
+          <a class="plan-whatsapp" href="https://wa.me/919481775018?text=Hi%20Express%20Stays%2C%20I%27d%20like%20help%20planning%20my%20Chikmagalur%20trip." target="_blank" rel="noopener"><div class="wa-icon"><i class="fa-brands fa-whatsapp"></i></div><div><div class="wa-cta-word">Skip the form</div><strong>TEXT US ON WHATSAPP</strong><span>Tell us what you need. A local person will help you.</span></div></a>
         </div>
 
         <form class="form-card reveal" id="tripForm">
@@ -886,7 +878,16 @@
             <div class="field"><label for="stayType">STAY STYLE</label><select id="stayType" name="stay_type"><option value="">Help me choose</option><option>Homestay</option><option>Resort</option><option>Private villa / property</option><option>Nature / plantation stay</option><option>Pool stay</option><option>Budget stay</option><option>Group stay</option></select></div>
             <div class="field"><label for="budget">APPROX. STAY BUDGET</label><select id="budget" name="budget"><option value="">Help me choose</option><option>Under ₹1,500 / night</option><option>₹1,500–₹2,500 / night</option><option>₹2,500–₹4,000 / night</option><option>₹4,000+ / night</option><option>Budget for the whole trip — I'll explain below</option></select></div>
             <div class="field"><label for="transport">TRANSPORT HELP</label><select id="transport" name="transport"><option value="">Not sure yet</option><option>No transport needed</option><option>Local cab / car</option><option>Jeep for sightseeing</option><option>Pickup / drop</option><option>Need help deciding</option></select></div>
-            <div class="field"><label for="food">FOOD / STAY PREFERENCE</label><select id="food" name="food"><option value="">No specific preference</option><option>Home-style Malnad food</option><option>Breakfast included</option><option>Breakfast + dinner</option><option>Food is not required</option></select></div>
+            <div class="field"><label for="food">MEAL PLAN</label><select id="food" name="food"><option value="">Help me choose</option><option>Stay only — no meals</option><option>Breakfast only</option><option>Lunch only</option><option>Dinner only</option><option>Breakfast + lunch</option><option>Breakfast + dinner</option><option>Lunch + dinner</option><option>Breakfast + lunch + dinner</option><option>Home-style Malnad meals — recommend a plan</option></select></div>
+            <div class="discount-box">
+              <div class="discount-box-title"><i class="fa-solid fa-tags"></i> ASK US ABOUT BOOKING SAVINGS</div>
+              <div class="discount-options">
+                <label class="discount-option"><input type="checkbox" name="discount_interest" value="Multiple nights"> Multiple-night stay</label>
+                <label class="discount-option"><input type="checkbox" name="discount_interest" value="Group booking"> Group booking</label>
+                <label class="discount-option"><input type="checkbox" name="discount_interest" value="Both"> Both</label>
+              </div>
+              <div class="discount-note">We can check applicable offers for your dates, group size and property.</div>
+            </div>
             <div class="field full"><label for="details">ANYTHING ELSE WE SHOULD KNOW?</label><textarea id="details" name="details" placeholder="Example: family with kids, private property for 10 friends, want Mullayanagiri + waterfalls, need pickup from Kadur, birthday setup, etc."></textarea></div>
           </div>
 
@@ -996,7 +997,7 @@ Experiences: ${data.get("experience")||"Not specified"}
 Stay style: ${data.get("stay_type")||"Help me choose"}
 Stay budget: ${data.get("budget")||"Help me choose"}
 Transport: ${data.get("transport")||"Not sure yet"}
-Food preference: ${data.get("food")||"No specific preference"}
+Meal plan: ${data.get("food")||"Help me choose"}\nDiscount interest: ${data.getAll("discount_interest").join(", ")||"No specific request"}
 Additional details: ${data.get("details")||"None"}`;
 
       const submit=form.querySelector(".submit");
