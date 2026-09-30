@@ -1423,6 +1423,265 @@
       .property-title-row h2{font-size:25px}
     }
 
+    
+    /* ---------- PROPERTY DETAIL REFINEMENT ---------- */
+    .property-dialog{
+      width:min(1240px,100%);
+      max-height:94vh;
+      border-radius:26px;
+      overflow:auto;
+    }
+    .property-gallery{
+      grid-template-columns:minmax(0,1.72fr) minmax(260px,.72fr);
+      gap:7px;
+      padding:7px;
+      background:#dfe6e1;
+    }
+    .property-main-photo{
+      height:560px;
+      border-radius:20px 5px 5px 20px;
+      cursor:zoom-in;
+    }
+    .property-main-photo::after{
+      content:"Click to enlarge";
+      position:absolute;
+      right:18px;
+      top:18px;
+      z-index:5;
+      color:#fff;
+      background:rgba(4,22,13,.62);
+      border:1px solid rgba(255,255,255,.22);
+      padding:9px 12px;
+      border-radius:50px;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.04em;
+      opacity:0;
+      transition:.2s ease;
+      pointer-events:none;
+    }
+    .property-main-photo:hover::after{opacity:1}
+    .property-main-photo img{cursor:zoom-in}
+    .property-thumbs{gap:7px}
+    .property-thumb{cursor:zoom-in}
+    .property-thumb img{transition:transform .45s ease,filter .3s ease}
+    .property-thumb:hover img{transform:scale(1.04);filter:brightness(.94)}
+    .property-gallery-label{
+      left:24px;bottom:24px;
+      font-size:11px;
+      padding:10px 13px;
+      border-radius:50px;
+    }
+    .property-gallery-more{
+      right:24px;bottom:24px;
+      font-size:11px;
+      padding:11px 15px;
+    }
+    .property-info{padding:42px 46px 45px}
+    .property-kicker{font-size:10px;margin-bottom:10px}
+    .property-title-row h2{font-size:52px;margin-bottom:9px}
+    .property-location{font-size:15px}
+    .property-rating{font-size:13px;padding:10px 14px}
+    .property-description{
+      font-size:16px;
+      line-height:1.72;
+      max-width:900px;
+      margin:24px 0 31px;
+    }
+    .property-overview{
+      grid-template-columns:1.02fr .98fr;
+      gap:42px;
+      margin-bottom:34px;
+      padding:32px 0 34px;
+    }
+    .property-overview-label,.property-section-title{font-size:10px}
+    .property-overview-title{font-size:38px;margin-bottom:16px}
+    .property-overview-copy p{font-size:15px;line-height:1.72}
+    .property-why{
+      border-radius:22px;
+      padding:29px 30px;
+      gap:22px 24px;
+    }
+    .property-why-title{font-size:25px}
+    .property-why-item{gap:11px}
+    .property-why-item i{font-size:13px}
+    .property-why-item strong{font-size:12px;margin-bottom:4px}
+    .property-why-item span{font-size:11px;line-height:1.5}
+    .property-practical{gap:30px;margin-bottom:31px}
+    .property-practical-box{border-radius:20px;padding:23px 24px}
+    .property-amenity-list{gap:8px}
+    .property-amenity{font-size:12px;padding:12px 11px;border-radius:11px}
+    .property-amenity i{font-size:11px}
+    .property-fit{font-size:12px}
+    
+    .property-bottom{
+      margin-top:8px;
+      padding:22px 24px;
+      border:0;
+      border-radius:20px;
+      background:linear-gradient(135deg,#0d3b24,#174d31);
+      color:#fff;
+      align-items:center;
+    }
+    .property-price{font-size:12px;color:rgba(255,255,255,.7)}
+    .property-price strong{
+      display:block;
+      font-size:31px;
+      line-height:1.05;
+      color:#fff;
+      margin-top:3px;
+    }
+    .property-actions{gap:10px}
+    .property-action{
+      min-height:48px;
+      padding:13px 19px;
+      border-radius:10px;
+      font-size:12px;
+    }
+    .property-action.primary{
+      background:var(--orange);
+      box-shadow:0 10px 24px rgba(243,106,0,.25);
+    }
+    .property-action.secondary{
+      background:#fff;
+      color:var(--green);
+      border:0;
+    }
+    .property-action.primary:hover,.property-action.secondary:hover{
+      transform:translateY(-2px);
+    }
+
+    .property-interest{
+      margin:0 0 30px;
+      padding:25px 27px;
+      border:1px solid #e1e8e2;
+      background:#f7f9f7;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .property-interest-copy strong{
+      display:block;
+      font-family:"Playfair Display",serif;
+      font-size:27px;
+      line-height:1.05;
+      color:var(--ink);
+      margin-bottom:6px;
+    }
+    .property-interest-copy span{
+      display:block;
+      color:#5e6a63;
+      font-size:12px;
+      line-height:1.5;
+      max-width:650px;
+    }
+    .property-interest-action{
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:48px;
+      padding:0 18px;
+      background:var(--green);
+      color:#fff;
+      border-radius:10px;
+      font-size:12px;
+      font-weight:900;
+      border:0;
+      cursor:pointer;
+    }
+
+    /* Full-screen photo viewer */
+    .property-lightbox{
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(2,10,6,.94);
+      padding:28px;
+    }
+    .property-lightbox.open{display:flex}
+    .lightbox-image-wrap{
+      width:min(1200px,92vw);
+      height:min(82vh,850px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+    .lightbox-image{
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      border-radius:8px;
+      box-shadow:0 30px 90px rgba(0,0,0,.45);
+    }
+    .lightbox-close,.lightbox-prev,.lightbox-next{
+      position:absolute;
+      z-index:3;
+      width:46px;height:46px;
+      display:grid;place-items:center;
+      border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.1);
+      color:#fff;
+      border-radius:50%;
+      cursor:pointer;
+      backdrop-filter:blur(10px);
+    }
+    .lightbox-close{right:20px;top:20px}
+    .lightbox-prev{left:18px;top:50%;transform:translateY(-50%)}
+    .lightbox-next{right:18px;top:50%;transform:translateY(-50%)}
+    .lightbox-counter{
+      position:absolute;
+      left:50%;
+      bottom:20px;
+      transform:translateX(-50%);
+      color:#fff;
+      background:rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 12px;
+      border-radius:50px;
+      font-size:11px;
+      font-weight:800;
+    }
+    .property-thumb.loading,.property-all-photos button.loading{visibility:hidden}
+    
+    @media(max-width:760px){
+      .property-gallery{grid-template-columns:1fr;padding:4px}
+      .property-main-photo{height:330px;border-radius:17px 17px 4px 4px}
+      .property-main-photo::after{display:none}
+      .property-thumbs{grid-template-columns:1fr 1fr;grid-template-rows:135px;gap:4px}
+      .property-info{padding:28px 20px 25px}
+      .property-title-row h2{font-size:37px}
+      .property-location{font-size:12px}
+      .property-description{font-size:14px}
+      .property-overview-title{font-size:30px}
+      .property-overview-copy p{font-size:13px}
+      .property-interest{display:block;padding:20px;margin-bottom:23px}
+      .property-interest-copy strong{font-size:23px}
+      .property-interest-action{margin-top:15px;width:100%;justify-content:center}
+      .property-bottom{padding:18px;display:flex;gap:15px}
+      .property-price strong{font-size:27px}
+      .property-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}
+      .property-action{justify-content:center}
+      .property-lightbox{padding:12px}
+      .lightbox-image-wrap{width:100%;height:78vh}
+      .lightbox-prev{left:7px}
+      .lightbox-next{right:7px}
+      .lightbox-close{right:12px;top:12px}
+    }
+    @media(max-width:420px){
+      .property-title-row h2{font-size:31px}
+      .property-bottom{display:block}
+      .property-actions{margin-top:13px;grid-template-columns:1fr}
+      .property-main-photo{height:285px}
+    }
+
   </style>
 </head>
 
@@ -1885,6 +2144,13 @@
         </div>
 
         <p class="property-description" id="propertyDescription"></p>
+        <div class="property-interest">
+          <div class="property-interest-copy">
+            <strong>Like this stay?</strong>
+            <span>Ask us about availability, meals, group stays, pricing and what you can do around the property. We’ll help you plan it.</span>
+          </div>
+          <button class="property-interest-action" type="button" id="propertyInterest"><i class="fa-brands fa-whatsapp"></i> Ask about this stay</button>
+        </div>
 
         <div class="property-overview">
           <div class="property-overview-copy">
@@ -1919,6 +2185,16 @@
     </div>
   </div>
 
+  <div class="property-lightbox" id="propertyLightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close photo viewer"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lightbox-image-wrap">
+      <img class="lightbox-image" id="lightboxImage" src="" alt="">
+      <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+    <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
   <script>
     document.documentElement.classList.add("js-reveal");
 
@@ -1938,7 +2214,7 @@
         expect:[["fa-mug-hot","Coffee country","Mallandur's plantation landscape and greenery."],["fa-utensils","Home-style meals","Simple food that feels part of the stay."],["fa-fire","Relaxed evenings","Time outdoors, around the fire and together."],["fa-person-swimming","Swimming pool","Unwind at the property between outings."]],
         amenities:[["fa-house","Bungalow"],["fa-bed","Couple rooms"],["fa-people-roof","Dormitory"],["fa-person-swimming","Swimming pool"],["fa-people-roof","Family friendly"],["fa-wifi","Wi-Fi"],["fa-person-walking","Estate walks"],["fa-fire","Camp fire"],["fa-utensils","Semi-open dining with a view"]],
         goodFor:["Families","Relaxed trips","Nature stays"],
-        photos:["living area.jpeg","WhatsApp Image 2026-04-03 at 11.08.58 AM (8).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (4).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (6).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (9).jpeg","WhatsApp Image 2026-04-04 at 12.17.29 PM.jpeg","Camp Fire (2).jpeg","Twilight gathering around the fire.png","ge post 2.png"],folder:"good-earth"
+        photos:["WhatsApp Image 2026-04-04 at 12.17.29 PM.jpeg","living area.jpeg","WhatsApp Image 2026-04-03 at 11.08.58 AM (8).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (4).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (6).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (9).jpeg","WhatsApp Image 2026-04-04 at 12.17.29 PM.jpeg","Camp Fire (2).jpeg","Twilight gathering around the fire.png","ge post 2.png"],folder:"good-earth"
       },
       "camp-alpha":{
         name:"Camp Alpha",kicker:"Homestay · Chikmagalur",location:"Chikmagalur",rating:"4.7",price:"₹800",
@@ -1959,6 +2235,31 @@
     };
     const propertyModal=document.getElementById("propertyModal"),propertyMainImage=document.getElementById("propertyMainImage"),propertyMainPhoto=document.getElementById("propertyMainPhoto"),propertyThumbs=document.getElementById("propertyThumbs"),propertyAllPhotos=document.getElementById("propertyAllPhotos"),propertyGalleryMore=document.getElementById("propertyGalleryMore");
     let activeProperty=null;
+    let activePhotoIndex=0;
+
+    const propertyLightbox=document.getElementById("propertyLightbox");
+    const lightboxImage=document.getElementById("lightboxImage");
+    const lightboxCounter=document.getElementById("lightboxCounter");
+
+    function openLightbox(index){
+      if(!activeProperty)return;
+      const p=propertyData[activeProperty];
+      if(!p || !p.photos.length)return;
+      activePhotoIndex=(index+p.photos.length)%p.photos.length;
+      const file=p.photos[activePhotoIndex];
+      lightboxImage.src=propertyUrl(p.folder,file);
+      lightboxImage.alt=p.name+" photo "+(activePhotoIndex+1);
+      lightboxCounter.textContent=(activePhotoIndex+1)+" / "+p.photos.length;
+      propertyLightbox.classList.add("open");
+      propertyLightbox.setAttribute("aria-hidden","false");
+      document.body.style.overflow="hidden";
+    }
+    function closeLightbox(){
+      propertyLightbox.classList.remove("open");
+      propertyLightbox.setAttribute("aria-hidden","true");
+      if(!propertyModal.classList.contains("open"))document.body.style.overflow="";
+    }
+    function stepLightbox(delta){openLightbox(activePhotoIndex+delta)}
 
     function propertyUrl(folder,file){
       return "assets/stays/"+folder+"/"+encodeURIComponent(file).replace(/%2F/g,"/");
@@ -1994,20 +2295,23 @@
 
         if(index<2){
           const btn=document.createElement("button");
-          btn.type="button"; btn.className="property-thumb";
+          btn.type="button"; btn.className="property-thumb loading";
           const img=document.createElement("img"); img.src=src; img.alt=p.name+" photo "+(index+2);
-          img.onerror=()=>btn.classList.add("hidden");
+          img.onload=()=>btn.classList.remove("loading");
+          img.onerror=()=>btn.remove();
           btn.appendChild(img);
-          btn.addEventListener("click",()=>setPropertyImage(src,p.name+" photo "+(index+2)));
+          btn.addEventListener("click",()=>{setPropertyImage(src,p.name+" photo "+(index+2));openLightbox(index+1);});
           propertyThumbs.appendChild(btn);
         }
 
         const allBtn=document.createElement("button");
         allBtn.type="button";
+        allBtn.className="loading";
         const allImg=document.createElement("img"); allImg.src=src; allImg.alt=p.name+" photo "+(index+1);
+        allImg.onload=()=>allBtn.classList.remove("loading");
         allImg.onerror=()=>allBtn.remove();
         allBtn.appendChild(allImg);
-        allBtn.addEventListener("click",()=>setPropertyImage(src,p.name+" photo "+(index+1)));
+        allBtn.addEventListener("click",()=>{setPropertyImage(src,p.name+" photo "+(index+1));openLightbox(index);});
         propertyAllPhotos.appendChild(allBtn);
       });
 
@@ -2045,7 +2349,16 @@
     }));
     document.getElementById("propertyClose").addEventListener("click",closeProperty);
     propertyModal.addEventListener("click",e=>{if(e.target===propertyModal)closeProperty()});
-    document.addEventListener("keydown",e=>{if(e.key==="Escape"&&propertyModal.classList.contains("open"))closeProperty()});
+    document.addEventListener("keydown",e=>{
+      if(e.key==="Escape"){
+        if(propertyLightbox.classList.contains("open"))closeLightbox();
+        else if(propertyModal.classList.contains("open"))closeProperty();
+      }
+      if(propertyLightbox.classList.contains("open")){
+        if(e.key==="ArrowLeft")stepLightbox(-1);
+        if(e.key==="ArrowRight")stepLightbox(1);
+      }
+    });
     document.getElementById("propertyPlan").addEventListener("click",()=>{
       if(!activeProperty)return;
       selectedStayInput.value=propertyData[activeProperty].name;
@@ -2053,6 +2366,19 @@
       closeProperty();
       document.getElementById("plan").scrollIntoView({behavior:"smooth",block:"start"});
     });
+    propertyMainImage.addEventListener("click",()=>openLightbox(activePhotoIndex));
+
+    document.getElementById("propertyInterest").addEventListener("click",()=>{
+      if(!activeProperty)return;
+      const name=propertyData[activeProperty].name;
+      window.open("https://wa.me/919481775018?text="+encodeURIComponent("Hi Express Stays, I'm interested in "+name+". Please share availability, pricing and details."),"_blank");
+    });
+
+    document.getElementById("lightboxClose").addEventListener("click",closeLightbox);
+    document.getElementById("lightboxPrev").addEventListener("click",()=>stepLightbox(-1));
+    document.getElementById("lightboxNext").addEventListener("click",()=>stepLightbox(1));
+    propertyLightbox.addEventListener("click",e=>{if(e.target===propertyLightbox)closeLightbox()});
+
     document.getElementById("propertyWhatsApp").addEventListener("click",()=>{
       if(!activeProperty)return;
       const name=propertyData[activeProperty].name;
