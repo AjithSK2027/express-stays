@@ -1682,6 +1682,38 @@
       .property-main-photo{height:285px}
     }
 
+    
+    /* ---------- UNIFIED STAY CARD SYSTEM ---------- */
+    .stay-grid-unified{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+    .stay-grid-unified .stay-card{display:flex;flex-direction:column;min-width:0;border:1px solid #dfe6e1;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 12px 32px rgba(16,32,25,.07);transform:none}
+    .stay-grid-unified .stay-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(16,32,25,.12)}
+    .stay-grid-unified .stay-photo{height:320px;flex:0 0 320px;position:relative;overflow:hidden;background:linear-gradient(135deg,#dfe9e1,#c8d5cc)}
+    .stay-grid-unified .stay-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .25s ease}
+    .stay-grid-unified .stay-card:hover .stay-photo img{transform:scale(1.045)}
+    .stay-grid-unified .stay-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,18,10,.08) 35%,rgba(3,18,10,.78) 100%);pointer-events:none}
+    .stay-grid-unified .stay-badge{top:16px;left:16px;z-index:3;padding:8px 10px;border-radius:0;font-size:9px;letter-spacing:.1em;background:rgba(7,29,18,.76)}
+    .stay-grid-unified .rating{top:16px;right:16px;z-index:3;padding:8px 10px;border-radius:50px;font-size:11px}
+    .stay-photo-caption{position:absolute;left:20px;bottom:20px;z-index:3;color:#fff}
+    .stay-photo-caption strong{display:block;font-family:"Playfair Display",serif;font-size:29px;line-height:1.02;letter-spacing:-.025em}
+    .stay-photo-caption span{display:block;margin-top:7px;font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.86)}
+    .stay-photo-count{position:absolute;right:18px;bottom:18px;z-index:3;color:#fff;background:rgba(4,22,13,.6);border:1px solid rgba(255,255,255,.22);padding:9px 11px;border-radius:50px;font-size:9px;font-weight:800;backdrop-filter:blur(10px)}
+    .stay-photo-fallback{display:none;position:absolute;inset:0;z-index:2;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#173c29;background:radial-gradient(circle at 70% 20%,#edf4ed 0,#d9e5dc 42%,#c5d6ca 100%)}
+    .stay-photo-fallback i{font-size:32px;color:#d96a24;margin-bottom:13px}.stay-photo-fallback strong{font-family:"Playfair Display",serif;font-size:27px}.stay-photo-fallback span{font-size:10px;margin-top:7px;color:#5f6d64}
+    .stay-photo-missing img{display:none!important}.stay-photo-missing::after{display:none}.stay-photo-missing .stay-photo-fallback{display:flex}
+    .stay-grid-unified .stay-body{flex:1;display:flex;flex-direction:column;padding:21px 22px 20px;background:#fff}
+    .stay-grid-unified .stay-type{font-size:9px;letter-spacing:.14em;margin-bottom:8px}
+    .stay-grid-unified .stay-body h3{display:block;font-family:"Playfair Display",serif;font-size:28px;line-height:1.05;letter-spacing:-.025em;margin-bottom:6px}
+    .stay-grid-unified .location{font-size:11px;margin-bottom:13px}
+    .stay-positioning{font-size:12px;line-height:1.55;color:#536159;min-height:58px;margin:0 0 15px}.stay-positioning strong{color:var(--ink)}
+    .stay-highlights{display:flex;flex-wrap:wrap;border-top:1px solid #e5ebe7;border-bottom:1px solid #e5ebe7;padding:12px 0;margin-bottom:auto;gap:0}
+    .stay-highlights span{display:inline-flex;align-items:center;gap:6px;padding:0 10px;border-right:1px solid #dce4de;color:#4b5951;font-size:10px;font-weight:700}.stay-highlights span:first-child{padding-left:0}.stay-highlights span:last-child{border-right:0}.stay-highlights i{color:var(--orange);font-size:10px}
+    .stay-grid-unified .stay-bottom{margin-top:18px;padding-top:16px;border-top:0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .stay-grid-unified .price{font-size:10px;white-space:nowrap}.stay-grid-unified .price strong{font-family:"Playfair Display",serif;font-size:24px;color:var(--ink)}.stay-grid-unified .price small{display:block;color:#8a958e;font-size:8px;margin-top:3px}
+    .stay-actions{display:flex;align-items:center;gap:8px}.stay-grid-unified .stay-view{display:inline-flex;align-items:center;gap:6px;border:1px solid #ccd8d0;border-radius:50px;background:#fff;color:var(--green);padding:10px 12px;margin:0;font-size:9px;font-weight:900;cursor:pointer}.stay-grid-unified .stay-view:hover{background:#f3f7f4;border-color:var(--green)}.stay-grid-unified .stay-enquire{border-radius:50px;padding:10px 13px;font-size:9px}
+    @media(max-width:980px){.stay-grid-unified{grid-template-columns:1fr 1fr}.stay-grid-unified .stay-card:first-child{grid-column:1/-1}}
+    @media(max-width:760px){.stay-grid-unified{grid-template-columns:1fr;gap:16px}.stay-grid-unified .stay-card:first-child{grid-column:auto}.stay-grid-unified .stay-photo{height:285px;flex-basis:285px}.stay-grid-unified .stay-body{padding:19px 17px}.stay-grid-unified .stay-body h3{font-size:25px}.stay-positioning{font-size:11px;min-height:0}.stay-highlights span{font-size:9px;padding:0 8px}.stay-grid-unified .stay-bottom{align-items:flex-end}.stay-actions{flex:1;justify-content:flex-end}}
+    @media(max-width:420px){.stay-grid-unified .stay-photo{height:260px;flex-basis:260px}.stay-photo-caption strong{font-size:25px}.stay-actions{gap:6px}.stay-grid-unified .stay-view,.stay-grid-unified .stay-enquire{padding:9px 10px;font-size:8px}}
+
   </style>
 </head>
 
@@ -1837,79 +1869,58 @@
         <a href="#plan" class="text-link">Can't decide? We'll help <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
-      <div class="stay-grid">
-        <article class="stay-card good-earth-card reveal" data-property="good-earth" aria-label="Good Earth Homestay">
+      <div class="stay-grid stay-grid-unified">
+        <article class="stay-card reveal" data-property="good-earth" aria-label="Good Earth Homestay">
           <div class="stay-photo">
             <img src="assets/stays/good-earth/WhatsApp%20Image%202026-04-04%20at%2012.17.29%20PM.jpeg" alt="Good Earth Homestay, Mallandur" loading="lazy">
-            <span class="stay-badge">Featured stay</span>
-            <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
-            <div class="good-earth-photo-meta">
-              <div>
-                <div class="good-earth-photo-title">Good Earth</div>
-                <span class="good-earth-photo-sub">Homestay · Mallandur</span>
-              </div>
-              <span class="good-earth-photo-count"><i class="fa-regular fa-images"></i> 9 photos</span>
-            </div>
+            <span class="stay-badge">Featured stay</span><div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+            <div class="stay-photo-caption"><strong>Good Earth</strong><span>Homestay · Mallandur</span></div>
+            <div class="stay-photo-count"><i class="fa-regular fa-images"></i> 9 photos</div>
           </div>
           <div class="stay-body">
-            <div class="stay-type">A quieter side of Chikmagalur</div>
-            <div class="good-earth-location"><i class="fa-solid fa-location-dot"></i> Mallandur, Chikmagalur</div>
-            <p class="good-earth-intro"><strong>Made for slow family stays.</strong> A nature-focused homestay with a pool, home-style food and space to spend time together.</p>
-            <div class="good-earth-amenities">
-              <span class="good-earth-amenity"><i class="fa-solid fa-person-swimming"></i> Pool</span>
-              <span class="good-earth-amenity"><i class="fa-solid fa-utensils"></i> Home Food</span>
-              <span class="good-earth-amenity"><i class="fa-solid fa-people-roof"></i> Family Friendly</span>
-            </div>
-            <div class="stay-bottom">
-              <div class="price">From <strong>₹2,500</strong> / night<small>Dates & group size can affect pricing.</small></div>
-              <div class="good-earth-actions">
-                <button class="good-earth-view" type="button" data-property-open="good-earth">Explore stay <i class="fa-solid fa-arrow-right"></i></button>
-                <a class="stay-enquire" href="#plan" data-stay="Good Earth Homestay">Plan stay</a>
-              </div>
-            </div>
+            <div class="stay-type">A quieter side of Chikmagalur</div><h3>Good Earth Homestay</h3>
+            <div class="location"><i class="fa-solid fa-location-dot"></i> Mallandur, Chikmagalur</div>
+            <p class="stay-positioning"><strong>Made for slow family stays.</strong> Pool, home-style food, greenery and space to spend time together.</p>
+            <div class="stay-highlights"><span><i class="fa-solid fa-person-swimming"></i> Pool</span><span><i class="fa-solid fa-utensils"></i> Home food</span><span><i class="fa-solid fa-people-roof"></i> Family</span></div>
+            <div class="stay-bottom"><div class="price">From <strong>₹2,500</strong><small>/ night</small></div><div class="stay-actions"><button class="stay-view" type="button" data-property-open="good-earth">Explore <i class="fa-solid fa-arrow-right"></i></button><a class="stay-enquire" href="#plan" data-stay="Good Earth Homestay">Plan stay</a></div></div>
           </div>
         </article>
 
-        <article class="stay-card reveal" data-property="camp-alpha">
+        <article class="stay-card reveal" data-property="camp-alpha" aria-label="Camp Alpha">
           <div class="stay-photo">
-            <img src="assets/stays/camp-alpha/WhatsApp Image 2026-04-12 at 11.08.36 AM.jpeg" alt="Camp Alpha">
-            <span class="stay-badge">Activity stay</span>
-            <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+            <img src="assets/stays/camp-alpha/WhatsApp Image 2026-04-12 at 11.08.36 AM.jpeg" alt="Camp Alpha" loading="lazy">
+            <span class="stay-badge">Activity stay</span><div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+            <div class="stay-photo-caption"><strong>Camp Alpha</strong><span>Homestay · Chikmagalur</span></div>
+            <div class="stay-photo-count"><i class="fa-regular fa-images"></i> 15 photos</div>
           </div>
           <div class="stay-body">
-            <div class="stay-type">Homestay · Chikmagalur</div>
-            <h3>Camp Alpha</h3>
+            <div class="stay-type">Outdoor · Social · Flexible</div><h3>Camp Alpha</h3>
             <div class="location"><i class="fa-solid fa-location-dot"></i> Chikmagalur</div>
-            <div class="stay-fit"><strong>For:</strong> Outdoor stays, groups, activities and time together.</div>
-            <div class="tags"><span class="tag">Tents</span><span class="tag">Dorms</span><span class="tag">Snooker</span><span class="tag">Natural stream</span></div>
-            <div class="stay-view" data-property-open="camp-alpha">Explore stay <i class="fa-solid fa-arrow-right"></i></div>
-            <div class="stay-bottom">
-              <div class="price">From <strong>₹800</strong> / night</div>
-              <a class="stay-enquire" href="#plan" data-stay="Camp Alpha">Plan stay <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <p class="stay-positioning"><strong>Made for outdoor time together.</strong> Tents, dorms, games, estate walks and a natural stream.</p>
+            <div class="stay-highlights"><span><i class="fa-solid fa-tent"></i> Tents</span><span><i class="fa-solid fa-gamepad"></i> Snooker</span><span><i class="fa-solid fa-water"></i> Stream</span></div>
+            <div class="stay-bottom"><div class="price">From <strong>₹800</strong><small>/ night</small></div><div class="stay-actions"><button class="stay-view" type="button" data-property-open="camp-alpha">Explore <i class="fa-solid fa-arrow-right"></i></button><a class="stay-enquire" href="#plan" data-stay="Camp Alpha">Plan stay</a></div></div>
           </div>
         </article>
 
-        <article class="stay-card reveal" data-property="charlies-hidden-leaf">
-          <div class="stay-photo">
-            <img src="assets/stays/charlies-hidden-leaf/01.jpg" alt="Charlie's Hidden Leaf Homestay">
-            <span class="stay-badge">Private retreat</span>
-            <div class="rating"><i class="fa-solid fa-star"></i> 4.6</div>
+        <article class="stay-card reveal" data-property="charlies-hidden-leaf" aria-label="Charlie's Hidden Leaf Homestay">
+          <div class="stay-photo stay-photo-missing">
+            <img src="assets/stays/charlies-hidden-leaf/01.jpg" alt="Charlie's Hidden Leaf Homestay" loading="lazy">
+            <span class="stay-badge">Private retreat</span><div class="rating"><i class="fa-solid fa-star"></i> 4.6</div>
+            <div class="stay-photo-caption"><strong>Charlie's Hidden Leaf</strong><span>Homestay · Chikmagalur</span></div>
+            <div class="stay-photo-count"><i class="fa-regular fa-images"></i> Gallery</div>
+            <div class="stay-photo-fallback"><i class="fa-solid fa-leaf"></i><strong>Charlie's Hidden Leaf</strong><span>Property photography coming soon</span></div>
           </div>
           <div class="stay-body">
-            <div class="stay-type">Homestay · Chikmagalur</div>
-            <h3>Charlie's Hidden Leaf</h3>
+            <div class="stay-type">Quiet · Private · Nature</div><h3>Charlie's Hidden Leaf</h3>
             <div class="location"><i class="fa-solid fa-location-dot"></i> Chikmagalur</div>
-            <div class="stay-fit"><strong>For:</strong> Groups looking for a quieter, private nature stay.</div>
-            <div class="tags"><span class="tag">Nature</span><span class="tag">Private stay</span><span class="tag">Groups</span></div>
-            <div class="stay-view" data-property-open="charlies-hidden-leaf">Explore stay <i class="fa-solid fa-arrow-right"></i></div>
-            <div class="stay-bottom">
-              <div class="price">From <strong>₹2,000</strong> / night</div>
-              <a class="stay-enquire" href="#plan" data-stay="Charlie's Hidden Leaf Homestay">Plan stay <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <p class="stay-positioning"><strong>Made for quieter getaways.</strong> A private, nature-focused stay suited to groups wanting a slower trip.</p>
+            <div class="stay-highlights"><span><i class="fa-solid fa-tree"></i> Nature</span><span><i class="fa-solid fa-house"></i> Private stay</span><span><i class="fa-solid fa-users"></i> Groups</span></div>
+            <div class="stay-bottom"><div class="price">From <strong>₹2,000</strong><small>/ night</small></div><div class="stay-actions"><button class="stay-view" type="button" data-property-open="charlies-hidden-leaf">Explore <i class="fa-solid fa-arrow-right"></i></button><a class="stay-enquire" href="#plan" data-stay="Charlie's Hidden Leaf Homestay">Plan stay</a></div></div>
           </div>
         </article>
-      </div>   </div>
+      </div>
+    </div>
+  </section>  </div>
   </section>
 
 
@@ -2342,6 +2353,11 @@
       if(propertyAllPhotos.classList.contains("open")) propertyAllPhotos.scrollIntoView({behavior:"smooth",block:"center"});
     });
 
+    document.querySelectorAll(".stay-card img").forEach(img=>img.addEventListener("error",()=>{
+      const photo=img.closest(".stay-photo");
+      if(photo)photo.classList.add("stay-photo-missing");
+    }));
+    
     document.querySelectorAll("[data-property-open]").forEach(el=>el.addEventListener("click",e=>{e.stopPropagation();openProperty(el.dataset.propertyOpen)}));
     document.querySelectorAll(".stay-card").forEach(card=>card.addEventListener("click",e=>{
       if(e.target.closest(".stay-enquire")||e.target.closest("[data-property-open]"))return;
