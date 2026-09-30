@@ -508,6 +508,88 @@
     .property-fit-list{display:flex;flex-wrap:wrap;gap:0 14px}
     .property-fit{font-size:10px;color:#46534b;padding:8px 0 7px;border-bottom:1px solid #d7e1da}
     @media(max-width:760px){.property-overview{grid-template-columns:1fr;gap:20px}.property-overview-copy{padding-right:0}.property-overview-title{font-size:29px}.property-why{grid-template-columns:1fr 1fr}.property-practical{grid-template-columns:1fr}.property-amenity-list{grid-template-columns:1fr 1fr}}
+    /* Property-specific visual identities */
+    .property-dialog.theme-camp-alpha{
+      --property-primary:#234b32;
+      --property-accent:#d96a24;
+      --property-accent-soft:#f3e7dc;
+      --property-surface:#f4f2eb;
+      --property-panel:#183a29;
+      --property-line:#dfe3d8;
+      --property-muted:#657067;
+    }
+    .property-dialog.theme-camp-alpha .property-info{
+      background:linear-gradient(180deg,#fbfaf6 0%,var(--property-surface) 100%);
+    }
+    .property-dialog.theme-camp-alpha .property-kicker,
+    .property-dialog.theme-camp-alpha .property-overview-label,
+    .property-dialog.theme-camp-alpha .property-section-title{
+      color:var(--property-accent);
+    }
+    .property-dialog.theme-camp-alpha .property-title-row h2,
+    .property-dialog.theme-camp-alpha .property-overview-title,
+    .property-dialog.theme-camp-alpha .property-price strong{
+      color:var(--property-primary);
+    }
+    .property-dialog.theme-camp-alpha .property-rating{
+      background:#f4eadf;border-color:#ead7c5;color:var(--property-primary);
+    }
+    .property-dialog.theme-camp-alpha .property-rating i,
+    .property-dialog.theme-camp-alpha .property-amenity i{
+      color:var(--property-accent);
+    }
+    .property-dialog.theme-camp-alpha .property-overview{
+      border-color:var(--property-line);
+    }
+    .property-dialog.theme-camp-alpha .property-why{
+      background:linear-gradient(135deg,#183a29,#28543a);
+      border-radius:22px;
+    }
+    .property-dialog.theme-camp-alpha .property-why-item i{
+      color:#f0a05f;
+    }
+    .property-dialog.theme-camp-alpha .property-practical-box{
+      background:#f8f7f1;
+      border-color:var(--property-line);
+    }
+    .property-dialog.theme-camp-alpha .property-amenity{
+      background:#fffdf8;
+      border-color:#e6e3d8;
+    }
+    .property-dialog.theme-camp-alpha .property-fit{
+      color:var(--property-primary);
+      border-color:#d8ddd2;
+    }
+    .property-dialog.theme-camp-alpha .property-action.primary{
+      background:var(--property-primary);
+    }
+    .property-dialog.theme-camp-alpha .property-action.secondary{
+      background:#f3e7dc;
+      color:var(--property-primary);
+      border-color:#ead7c5;
+    }
+    .property-dialog.theme-camp-alpha .property-gallery-label{
+      background:rgba(24,58,41,.78);
+      border-color:rgba(255,255,255,.28);
+    }
+    .property-dialog.theme-camp-alpha .property-gallery-more{
+      background:rgba(35,75,50,.82);
+    }
+    .property-dialog.theme-camp-alpha .property-main-photo{
+      background:#d9ddd2;
+    }
+
+    .property-dialog.theme-good-earth{
+      --property-primary:#0d3b24;
+      --property-accent:#f36a00;
+    }
+
+    .property-dialog.theme-good-earth .property-kicker,
+    .property-dialog.theme-good-earth .property-overview-label,
+    .property-dialog.theme-good-earth .property-section-title{
+      color:var(--property-accent);
+    }
+
     .property-description{
       font-size:14px;line-height:1.7;color:#4f5c55;max-width:790px;
       margin:22px 0 27px;
@@ -1528,7 +1610,7 @@
 
   <!-- PREMIUM PROPERTY DETAIL MODAL -->
   <div class="property-modal" id="propertyModal" aria-hidden="true">
-    <div class="property-dialog" role="dialog" aria-modal="true" aria-labelledby="propertyModalTitle">
+    <div class="property-dialog" id="propertyDialog" role="dialog" aria-modal="true" aria-labelledby="propertyModalTitle">
       <button class="property-close" id="propertyClose" type="button" aria-label="Close property details"><i class="fa-solid fa-xmark"></i></button>
 
       <div class="property-gallery">
@@ -1539,7 +1621,7 @@
             <strong>Property photos coming soon</strong>
             <span>Real photographs will appear here once uploaded.</span>
           </div>
-          <span class="property-gallery-label">Good Earth · Mallandur</span>
+          <span class="property-gallery-label" id="propertyGalleryLabel"></span>
           <button class="property-gallery-more" id="propertyGalleryMore" type="button"><i class="fa-regular fa-images"></i> View all photos</button>
         </div>
         <div class="property-thumbs" id="propertyThumbs"></div>
@@ -1641,6 +1723,9 @@
       const p=propertyData[key]; if(!p)return;
       activeProperty=key;
       document.getElementById("propertyKicker").textContent=p.kicker;
+      document.getElementById("propertyDialog").classList.remove("theme-good-earth","theme-camp-alpha");
+      document.getElementById("propertyDialog").classList.add(key==="camp-alpha" ? "theme-camp-alpha" : "theme-good-earth");
+      document.getElementById("propertyGalleryLabel").textContent=p.kicker;
       document.getElementById("propertyModalTitle").textContent=p.name;
       document.getElementById("propertyLocation").textContent=p.location;
       document.getElementById("propertyRating").textContent=p.rating;
