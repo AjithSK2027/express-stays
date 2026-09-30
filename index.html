@@ -1714,6 +1714,122 @@
     @media(max-width:760px){.stay-grid-unified{grid-template-columns:1fr;gap:16px}.stay-grid-unified .stay-card:first-child{grid-column:auto}.stay-grid-unified .stay-photo{height:285px;flex-basis:285px}.stay-grid-unified .stay-body{padding:19px 17px}.stay-grid-unified .stay-body h3{font-size:25px}.stay-positioning{font-size:11px;min-height:0}.stay-highlights span{font-size:9px;padding:0 8px}.stay-grid-unified .stay-bottom{align-items:flex-end}.stay-actions{flex:1;justify-content:flex-end}}
     @media(max-width:420px){.stay-grid-unified .stay-photo{height:260px;flex-basis:260px}.stay-photo-caption strong{font-size:25px}.stay-actions{gap:6px}.stay-grid-unified .stay-view,.stay-grid-unified .stay-enquire{padding:9px 10px;font-size:8px}}
 
+    
+    /* ---------- SITE-WIDE TIDY / VISUAL CONSISTENCY ---------- */
+    :root{
+      --radius-lg:20px;
+      --radius-md:14px;
+      --shadow-soft:0 12px 34px rgba(13,59,36,.07);
+    }
+    html{scroll-behavior:smooth}
+    body{background:#fbfcfa;color:var(--ink);-webkit-font-smoothing:antialiased}
+    section{position:relative}
+    .container{width:min(1240px,calc(100% - 48px))}
+    .section-head{margin-bottom:28px;align-items:flex-end}
+    .section-head h2{letter-spacing:-.035em;line-height:1.03}
+    .section-head p{line-height:1.55}
+    .text-link{white-space:nowrap}
+
+    /* Destination family: equal weight, softer edges, controlled typography */
+    .destination-grid{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
+    }
+    .destination-card,
+    .destination-card.live{
+      min-height:430px;
+      height:430px;
+      border-radius:20px;
+      box-shadow:var(--shadow-soft);
+    }
+    .destination-card img{
+      filter:saturate(.88) contrast(.97);
+      object-position:center;
+    }
+    .destination-card:hover img{filter:saturate(.98) contrast(1)}
+    .destination-overlay{
+      background:linear-gradient(180deg,rgba(3,22,13,.02) 28%,rgba(3,22,13,.18) 48%,rgba(3,22,13,.86) 100%);
+    }
+    .destination-content{left:25px;right:25px;bottom:24px}
+    .destination-content h3,
+    .destination-card.live .destination-content h3,
+    .destination-card:not(.live) .destination-content h3{
+      font-size:clamp(30px,3vw,42px);
+      line-height:1;
+      margin:9px 0 8px;
+    }
+    .destination-content p{font-size:11px;line-height:1.5;max-width:340px;margin-bottom:14px}
+    .destination-status{font-size:9px;letter-spacing:.13em}
+    .coming-badge{top:17px;right:17px;border-radius:8px;padding:7px 9px}
+    
+    .destination-focus{
+      margin-top:18px;
+      padding:24px 26px;
+      border:1px solid #e1e8e2;
+      border-radius:18px;
+      background:#f5f8f5;
+      grid-template-columns:minmax(280px,1fr) minmax(0,2fr);
+      gap:28px;
+    }
+    .destination-focus-copy h3{font-size:27px;line-height:1.05}
+    .destination-focus-copy p{font-size:11px;line-height:1.55}
+    .destination-options{grid-template-columns:repeat(4,1fr);align-self:stretch}
+    .destination-option{padding:9px 15px}
+    .destination-option:first-child{border-left:0}
+    .destination-option strong{font-size:11px}
+    .destination-option span{font-size:9px;line-height:1.4}
+
+    /* Keep the stay family visually related to destinations */
+    .stay-grid-unified{gap:16px}
+    .stay-grid-unified .stay-card{
+      border-radius:20px;
+      box-shadow:0 10px 28px rgba(16,32,25,.06);
+    }
+    .stay-grid-unified .stay-photo{height:305px;flex-basis:305px}
+    .stay-grid-unified .stay-body{padding:20px 21px}
+    .stay-grid-unified .stay-body h3{font-size:27px}
+    
+    /* Trust / service / planning surfaces use the same restrained geometry */
+    .trust-grid{border-radius:18px}
+    .service{border-radius:18px;box-shadow:none}
+    .trip-builder,.plan{border-radius:0}
+    .trip-builder-panel,.form-card{border-radius:20px}
+    .plan-whatsapp{border-radius:16px}
+    .explore{border-radius:20px;overflow:hidden}
+    .footer-grid{gap:34px}
+
+    @media(max-width:980px){
+      .container{width:min(100% - 36px,1240px)}
+      .destination-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+      .destination-card,.destination-card.live{height:390px;min-height:390px}
+      .destination-content{left:18px;right:18px;bottom:19px}
+      .destination-content h3,.destination-card.live .destination-content h3,.destination-card:not(.live) .destination-content h3{font-size:30px}
+      .destination-focus{grid-template-columns:1fr;gap:17px}
+      .destination-options{grid-template-columns:repeat(4,1fr)}
+    }
+    @media(max-width:760px){
+      .container{width:calc(100% - 28px)}
+      .section-head{margin-bottom:22px}
+      .section-head h2{font-size:clamp(31px,8vw,42px)}
+      .destination-grid{grid-template-columns:1fr;gap:12px}
+      .destination-card,.destination-card.live{height:310px;min-height:310px;border-radius:16px}
+      .destination-content h3,.destination-card.live .destination-content h3,.destination-card:not(.live) .destination-content h3{font-size:34px}
+      .destination-focus{padding:21px 18px;border-radius:16px}
+      .destination-options{grid-template-columns:1fr 1fr}
+      .destination-option{padding:11px 10px}
+      .destination-option:nth-child(3),.destination-option:nth-child(4){border-top:1px solid var(--line);padding-top:14px}
+      .destination-option:nth-child(3){border-left:0}
+      .stay-grid-unified .stay-photo{height:285px;flex-basis:285px}
+      .explore{border-radius:16px}
+    }
+    @media(max-width:420px){
+      .container{width:calc(100% - 22px)}
+      .destination-card,.destination-card.live{height:285px;min-height:285px}
+      .destination-content h3,.destination-card.live .destination-content h3,.destination-card:not(.live) .destination-content h3{font-size:31px}
+      .destination-content p{font-size:10px}
+      .destination-focus-copy h3{font-size:24px}
+    }
+
   </style>
 </head>
 
@@ -1807,7 +1923,7 @@
 
       <div class="destination-grid">
         <a class="destination-card live reveal" href="#stays" aria-label="Explore Chikmagalur">
-          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1600&q=88" alt="Chikmagalur hills">
+          <img src="https://karnatakatourism.org/wp-content/uploads/2020/05/Mullaiyanagiri_Chickkamagaluru_2.jpg" alt="Mullayanagiri, Chikmagalur" loading="lazy">
           <div class="destination-overlay"></div>
           <div class="destination-content">
             <span class="destination-status live-status"><i class="fa-solid fa-circle"></i> Live destination</span>
@@ -1818,7 +1934,7 @@
         </a>
 
         <div class="destination-card coming reveal">
-          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=88" alt="Coorg landscape">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=88" alt="Coorg landscape" loading="lazy">
           <div class="destination-overlay"></div>
           <div class="destination-content">
             <span class="destination-status"><i class="fa-solid fa-clock"></i> Coming soon</span>
@@ -1830,7 +1946,7 @@
         </div>
 
         <div class="destination-card coming reveal">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=88" alt="Sakleshpur landscape">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=88" alt="Sakleshpur landscape" loading="lazy">
           <div class="destination-overlay"></div>
           <div class="destination-content">
             <span class="destination-status"><i class="fa-solid fa-clock"></i> Coming soon</span>
