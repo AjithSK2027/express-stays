@@ -898,6 +898,202 @@
       .footer-brand, .footer-actions { grid-column: auto; }
     }
 
+  
+    /* ---------- MOBILE REFINEMENT ---------- */
+    @media (max-width:760px){
+      html{overflow-x:hidden}
+      body{overflow-x:hidden}
+      .container{width:calc(100% - 32px);max-width:none}
+      section{padding:58px 0}
+      .nav-wrap{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,0));}
+      nav{height:68px;gap:12px}
+      .brand-logo{width:126px}
+      .mobile-toggle{
+        width:42px;height:42px;display:grid;place-items:center;
+        border-radius:12px;background:rgba(255,255,255,.9);
+        border:1px solid rgba(13,59,36,.12);font-size:19px;
+      }
+      .nav-links{
+        top:64px;left:0;right:0;padding:10px;
+        border:1px solid var(--line);border-radius:18px;
+        gap:2px;max-height:calc(100vh - 84px);overflow:auto;
+      }
+      .nav-links a{padding:13px 14px;border-radius:10px;font-size:13px}
+      .nav-links a:hover,.nav-links a.active{background:#f3f7f4}
+      .nav-links a::after{display:none}
+
+      .hero{
+        min-height:690px;
+        align-items:flex-end;
+        background:
+          linear-gradient(0deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.94) 38%,rgba(255,255,255,.28) 76%,rgba(255,255,255,.05) 100%),
+          url("https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=85") 58% center/cover;
+      }
+      .hero-content{padding:0 0 72px;max-width:100%}
+      .eyebrow{font-size:10px;letter-spacing:.14em;margin-bottom:10px}
+      h1{font-size:clamp(42px,12vw,52px);line-height:.96;letter-spacing:-.05em;margin-bottom:17px}
+      .hero-copy{font-size:14px;line-height:1.55;margin-bottom:22px;max-width:34em}
+      .actions{display:grid;grid-template-columns:1fr;gap:9px}
+      .actions .btn{width:100%;min-height:48px}
+      .hero-script{display:none}
+
+      .trust{margin-top:-20px}
+      .trust-grid{grid-template-columns:1fr 1fr;border-radius:16px}
+      .trust-item{padding:17px 13px;gap:10px;align-items:flex-start}
+      .icon-circle{width:38px;height:38px;min-width:38px;font-size:16px}
+      .trust-item h4{font-size:11px}
+      .trust-item p{font-size:9px}
+
+      .section-head{margin-bottom:22px;gap:8px}
+      .section-head h2{font-size:31px}
+      .section-head p{font-size:12px;line-height:1.5}
+      .text-link{font-size:11px}
+
+      .destination-grid{gap:12px}
+      .destination-card{min-height:270px;border-radius:18px}
+      .destination-content{left:18px;right:18px;bottom:18px}
+      .destination-content h3{font-size:27px}
+      .destination-content p{font-size:11px;margin-bottom:11px}
+      .destination-focus{padding:18px;border-radius:18px;gap:17px}
+      .destination-focus-copy h3{font-size:20px}
+      .destination-options{grid-template-columns:1fr 1fr;gap:8px}
+      .destination-option{padding:11px 10px;border-radius:12px}
+      .destination-option strong{font-size:10px}
+      .destination-option span{font-size:8px}
+
+      .stay-grid{grid-template-columns:1fr;gap:14px}
+      .stay-card{border-radius:19px}
+      .stay-photo{height:235px}
+      .good-earth-card .stay-photo{height:270px}
+      .stay-body{padding:17px}
+      .stay-body h3{font-size:19px}
+      .stay-fit{font-size:10px}
+      .tags{gap:5px}
+      .tag{font-size:9px;padding:5px 8px}
+      .stay-bottom{gap:10px;align-items:flex-end}
+      .stay-enquire{padding:10px 12px;font-size:10px}
+      .good-earth-card .stay-body{padding:19px 17px}
+      .good-earth-intro{font-size:11px;max-width:none}
+      .good-earth-amenities{gap:0}
+      .good-earth-amenity{padding:7px 9px;font-size:9px}
+      .good-earth-amenity:nth-child(3n){border-right:0}
+      .good-earth-actions{width:100%}
+      .good-earth-actions .good-earth-view,.good-earth-actions .stay-enquire{flex:1}
+
+      .trip-builder-grid,.matcher-grid,.plan-grid{grid-template-columns:1fr;gap:16px}
+      .trip-builder-copy,.matcher-copy{padding:25px 20px;border-radius:19px}
+      .trip-builder-copy h2,.matcher-copy h2{font-size:34px}
+      .trip-builder-panel,.matcher-controls{padding:18px;border-radius:18px}
+      .need-grid{grid-template-columns:1fr;gap:8px}
+      .need-card{padding:13px}
+      .need-card strong{font-size:12px}
+      .need-card span{font-size:9px}
+      .builder-label{margin-top:17px}
+      .builder-chips{gap:6px}
+      .builder-chip{padding:8px 10px;font-size:10px}
+
+      .plan{padding:58px 0}
+      .plan-copy{font-size:12px}
+      .plan-points{grid-template-columns:1fr;gap:9px}
+      .plan-point{padding:13px}
+      .plan-whatsapp{padding:14px;border-radius:15px}
+      .plan-whatsapp strong{font-size:13px}
+      .plan-whatsapp span{font-size:9px}
+
+      .form-card{padding:18px;border-radius:18px}
+      .form-heading{gap:10px}
+      .form-title{font-size:16px}
+      .form-subtitle{font-size:9px}
+      .form-step{font-size:8px}
+      .selection-summary{gap:5px}
+      .selection-summary span{font-size:8px;padding:6px 8px}
+      .form-grid{grid-template-columns:1fr;gap:12px}
+      .field.full{grid-column:auto}
+      .field label{font-size:9px}
+      .field input,.field select,.field textarea{width:100%;min-height:44px;font-size:13px}
+      .field textarea{min-height:110px}
+      .discount-box{padding:13px}
+      .discount-options{display:grid;grid-template-columns:1fr;gap:8px}
+      .submit{min-height:48px}
+      .form-note{font-size:9px;line-height:1.45}
+
+      .service-grid{grid-template-columns:1fr 1fr;gap:9px}
+      .service{padding:18px 10px;border-radius:14px}
+      .service i{font-size:21px;margin-bottom:10px}
+      .service h3{font-size:11px}
+      .service p{font-size:9px}
+
+      .explore{min-height:300px;border-radius:18px}
+      .explore-content{padding:25px 20px}
+      .explore-content h2{font-size:31px}
+
+      footer{padding:42px 0 78px}
+      .footer-grid{grid-template-columns:1fr;gap:27px}
+      .footer-brand{grid-column:auto}
+      .footer-logo{width:138px}
+      .footer-brand p{font-size:10px}
+      .footer-links{gap:7px}
+      .footer-links a,.contact-list a,.contact-list span{font-size:10px}
+      .footer-actions{grid-column:auto}
+      .footer-buttons{grid-template-columns:1fr 1fr}
+      .footer-btn{font-size:10px;padding:10px 7px}
+      .bottom{font-size:8px;gap:8px;line-height:1.5}
+
+      .property-modal{padding:6px}
+      .property-dialog{width:100%;max-height:98vh;border-radius:19px}
+      .property-gallery{grid-template-columns:1fr;gap:4px;padding:4px}
+      .property-main-photo{height:270px;border-radius:15px 15px 4px 4px}
+      .property-thumbs{grid-template-columns:1fr 1fr;grid-template-rows:100px;gap:4px}
+      .property-thumb:first-child,.property-thumb:last-child{border-radius:4px}
+      .property-gallery-label{left:12px;bottom:12px;font-size:8px;padding:7px 9px}
+      .property-gallery-more{right:12px;bottom:12px;font-size:8px;padding:8px 10px}
+      .property-all-photos{grid-template-columns:1fr 1fr;gap:4px;padding:4px}
+      .property-all-photos button{height:115px}
+      .property-info{padding:20px 16px 22px}
+      .property-kicker{font-size:8px}
+      .property-title-row h2{font-size:28px;line-height:1.02}
+      .property-location{font-size:10px}
+      .property-rating{font-size:10px;margin-top:9px;padding:7px 9px}
+      .property-description{font-size:11px;line-height:1.6;margin:17px 0 20px}
+      .property-overview{gap:13px}
+      .property-overview-copy{padding:17px}
+      .property-overview-title{font-size:24px}
+      .property-overview-copy p{font-size:10px;line-height:1.55}
+      .property-why{grid-template-columns:1fr}
+      .property-practical{grid-template-columns:1fr;gap:12px}
+      .property-practical-box{padding:16px}
+      .property-amenity-list{grid-template-columns:1fr 1fr;gap:6px}
+      .property-amenity{font-size:9px;padding:9px 7px}
+      .property-bottom{display:flex;flex-direction:column;align-items:stretch;gap:13px;margin-top:20px}
+      .property-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+      .property-action{justify-content:center;padding:11px 8px;font-size:9px}
+      .property-price strong{font-size:22px}
+    }
+
+    @media (max-width:420px){
+      .container{width:calc(100% - 24px)}
+      .brand-logo{width:116px}
+      .hero{min-height:660px}
+      .hero-content{padding-bottom:60px}
+      h1{font-size:44px}
+      .hero-copy{font-size:13px}
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .trust-item{padding:14px 10px}
+      .trust-item h4{font-size:10px}
+      .trust-item p{font-size:8px}
+      .destination-options{grid-template-columns:1fr 1fr}
+      .good-earth-amenity{width:50%;padding-left:0;padding-right:7px}
+      .good-earth-amenity:nth-child(odd){border-right:1px solid #e5ebe7}
+      .good-earth-amenity:nth-child(even){border-right:0}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .service{min-height:125px}
+      .footer-buttons{grid-template-columns:1fr}
+      .property-main-photo{height:235px}
+      .property-thumbs{grid-template-rows:86px}
+      .property-actions{grid-template-columns:1fr}
+      .property-title-row h2{font-size:25px}
+    }
+
   </style>
 </head>
 
