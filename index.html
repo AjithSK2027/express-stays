@@ -1561,16 +1561,13 @@
 
         <div class="property-overview">
           <div class="property-overview-copy">
-            <div class="property-overview-label">Why Good Earth</div>
-            <div class="property-overview-title">A relaxed stay for people who want more time together.</div>
-            <p>Good Earth works well as a comfortable base in Mallandur — especially for families and groups who want greenery, home-style food, a pool and a quieter pace between Chikmagalur outings.</p>
+            <div class="property-overview-label" id="propertyOverviewLabel"></div>
+            <div class="property-overview-title" id="propertyOverviewTitle"></div>
+            <p id="propertyOverviewDescription"></p>
           </div>
           <div class="property-why">
             <div class="property-why-title">What you can expect</div>
-            <div class="property-why-item"><i class="fa-solid fa-mug-hot"></i><div><strong>Coffee country</strong><span>Mallandur's plantation landscape and greenery.</span></div></div>
-            <div class="property-why-item"><i class="fa-solid fa-utensils"></i><div><strong>Home-style meals</strong><span>Simple food that feels part of the stay.</span></div></div>
-            <div class="property-why-item"><i class="fa-solid fa-fire"></i><div><strong>Relaxed evenings</strong><span>Time outdoors, around the fire and together.</span></div></div>
-            <div class="property-why-item"><i class="fa-solid fa-person-swimming"></i><div><strong>Swimming pool</strong><span>Unwind at the property between outings.</span></div></div>
+            <div id="propertyExpect"></div>
           </div>
         </div>
         <div class="property-practical">
@@ -1610,6 +1607,8 @@
       "good-earth":{
         name:"Good Earth Homestay",kicker:"Homestay · Mallandur",location:"Mallandur, Chikmagalur",rating:"4.7",price:"₹2,500",
         description:"A slower side of Chikmagalur — a relaxed homestay in the Mallandur area where greenery, home-style food and unhurried evenings are part of the stay.",
+        overviewLabel:"Why Good Earth",overviewTitle:"A relaxed stay for people who want more time together.",overviewDescription:"Good Earth works well as a comfortable base in Mallandur — especially for families and groups who want greenery, home-style food, a pool and a quieter pace between Chikmagalur outings.",
+        expect:[["fa-mug-hot","Coffee country","Mallandur's plantation landscape and greenery."],["fa-utensils","Home-style meals","Simple food that feels part of the stay."],["fa-fire","Relaxed evenings","Time outdoors, around the fire and together."],["fa-person-swimming","Swimming pool","Unwind at the property between outings."]],
         amenities:[["fa-house","Bungalow"],["fa-bed","Couple rooms"],["fa-people-roof","Dormitory"],["fa-person-swimming","Swimming pool"],["fa-people-roof","Family friendly"],["fa-wifi","Wi-Fi"],["fa-person-walking","Estate walks"],["fa-fire","Camp fire"],["fa-utensils","Semi-open dining with a view"]],
         goodFor:["Families","Relaxed trips","Nature stays"],
         photos:["living area.jpeg","WhatsApp Image 2026-04-03 at 11.08.58 AM (8).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (4).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (6).jpeg","WhatsApp Image 2026-04-04 at 11.48.49 AM (9).jpeg","WhatsApp Image 2026-04-04 at 12.17.29 PM.jpeg","Camp Fire (2).jpeg","Twilight gathering around the fire.png","ge post 2.png"],folder:"good-earth"
@@ -1617,8 +1616,10 @@
       "camp-alpha":{
         name:"Camp Alpha",kicker:"Homestay · Chikmagalur",location:"Chikmagalur",rating:"4.7",price:"₹800",
         description:"A nature stay with tents, bunk beds, dorms and couple rooms, with a café, snooker, campfire evenings, estate walks, Wi-Fi and a natural stream.",
-        amenities:[["fa-tree","Nature stay"],["fa-person-hiking","Activities"],["fa-utensils","Home food"]],
-        goodFor:["Friends","Groups","Activity trips"],
+        overviewLabel:"Why Camp Alpha",overviewTitle:"A stay built around the outdoors, activities and different ways to stay.",overviewDescription:"Camp Alpha brings together flexible accommodation and simple outdoor experiences — from tents and dorms to couple rooms and bunk beds, with a café, snooker, campfire evenings, estate walks and a natural stream.",
+        expect:[["fa-tent","Stay your way","Choose from tents, bunk beds, dorms and couple rooms."],["fa-gamepad","Café & snooker","A casual place to eat, relax and play."],["fa-person-walking","Estate & stream","Walk through the estate and spend time by the natural stream."],["fa-fire","Campfire evenings","Gather outdoors around the fire after the day."]],
+        amenities:[["fa-tent","Tents"],["fa-bed","Bunk beds"],["fa-people-roof","Dorms"],["fa-bed","Couple rooms"],["fa-utensils","Cafeteria"],["fa-gamepad","Snooker"],["fa-person-walking","Estate walks"],["fa-wifi","Wi-Fi"],["fa-fire","Camp fire"],["fa-water","Natural stream"]],
+        goodFor:["Friends","Groups","Activity trips","Outdoor stays"],
         photos:["WhatsApp Image 2026-04-12 at 11.08.36 AM.jpeg","WhatsApp Image 2026-04-12 at 11.08.37 AM.jpeg","WhatsApp Image 2026-04-12 at 11.08.38 AM.jpeg","WhatsApp Image 2026-04-12 at 11.08.42 AM.jpeg","WhatsApp Image 2026-04-12 at 11.09.41 AM (4).jpeg","WhatsApp Image 2026-04-12 at 11.09.41 AM (5).jpeg","WhatsApp Image 2026-04-12 at 11.09.41 AM (6).jpeg","WhatsApp Image 2026-04-12 at 11.09.41 AM (9).jpeg","WhatsApp Image 2026-04-12 at 11.09.41 AM.jpeg","WhatsApp Image 2026-04-12 at 11.09.42 AM (4).jpeg","WhatsApp Image 2026-04-12 at 11.09.42 AM.jpeg","WhatsApp Image 2026-04-12 at 11.18.17 AM.jpeg","amenity-dining.jpeg","stay-dorm.jpeg","Golden hour at the campsite.png"],folder:"camp-alpha"
       },
       "charlies-hidden-leaf":{
@@ -1644,6 +1645,10 @@
       document.getElementById("propertyLocation").textContent=p.location;
       document.getElementById("propertyRating").textContent=p.rating;
       document.getElementById("propertyDescription").textContent=p.description;
+      document.getElementById("propertyOverviewLabel").textContent=p.overviewLabel;
+      document.getElementById("propertyOverviewTitle").textContent=p.overviewTitle;
+      document.getElementById("propertyOverviewDescription").textContent=p.overviewDescription;
+      document.getElementById("propertyExpect").innerHTML=p.expect.map(x=>'<div class="property-why-item"><i class="fa-solid '+x[0]+'"></i><div><strong>'+x[1]+'</strong><span>'+x[2]+'</span></div></div>').join("");
       document.getElementById("propertyPrice").textContent=p.price;
       document.getElementById("propertyAmenities").innerHTML=p.amenities.map(a=>'<div class="property-amenity"><i class="fa-solid '+a[0]+'"></i><span>'+a[1]+'</span></div>').join("");
       document.getElementById("propertyGoodFor").innerHTML=p.goodFor.map(x=>'<span class="property-fit">'+x+'</span>').join("");
